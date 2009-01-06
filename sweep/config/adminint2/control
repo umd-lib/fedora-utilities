@@ -1,0 +1,29 @@
+#!/sbin/sh
+
+case "$1" in 
+
+'update')
+	mkdir -p ${FEDORA_HOME}/server/utilities/sweep/output/adminint2/update
+	cp log4j.conf ${FEDORA_HOME}/server/utilities/sweep/output/adminint2/update
+	cd ${FEDORA_HOME}/server/utilities/sweep/output/adminint2/update
+	fedora-search -q doType:UMD | sweep -a update -s adminint2 > /dev/null 2>&1 &
+	;;
+'report')
+	mkdir -p ${FEDORA_HOME}/server/utilities/sweep/output/adminint2/report
+	cp log4j.conf ${FEDORA_HOME}/server/utilities/sweep/output/adminint2/report
+        cd ${FEDORA_HOME}/server/utilities/sweep/output/adminint2/report
+        fedora-search -q doType:UMD | sweep -a report -s adminint2 > /dev/null 2>&1 &
+        ;;
+'force')
+	mkdir -p ${FEDORA_HOME}/server/utilities/sweep/output/adminint2/force
+	cp log4j.conf ${FEDORA_HOME}/server/utilities/sweep/output/adminint2/force
+        cd ${FEDORA_HOME}/server/utilities/sweep/output/adminint2/force
+        fedora-search -q doType:UMD | sweep -a force -s adminint2 > /dev/null 2>&1 &
+        ;;
+'report-final')
+	mkdir -p ${FEDORA_HOME}/server/utilities/sweep/output/adminint2/report-final
+	cp log4j.conf ${FEDORA_HOME}/server/utilities/sweep/output/adminint2/report-final
+        cd ${FEDORA_HOME}/server/utilities/sweep/output/adminint2/report-final
+        fedora-search -q doType:UMD | sweep -a report-final -s adminint2 > /dev/null 2>&1 &
+        ;;
+esac
