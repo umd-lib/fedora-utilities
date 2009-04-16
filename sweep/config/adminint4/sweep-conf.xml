@@ -29,7 +29,7 @@
 		<TestRights>N</TestRights>
 		<TestCitation>N</TestCitation>
                 <TestAddAttribute> 
-                        <run>Y</run> 
+                        <run>N</run> 
                         <attributeName>type</attributeName> 
                         <attributeValue>access</attributeValue>
                         <nodePath>/descMeta/rights[not(@type) and text()='Access restricted to patrons at the University of Maryland.']</nodePath>
@@ -40,10 +40,15 @@
                         <nodePath>/descMeta/rights[@type='note']</nodePath>
                 </TestRemoveAttribute>
 		<TestReplaceText>
-		        <run>Y</run>
+		        <run>N</run>
 			<textValue>United States of America</textValue>
 			<nodePath>/descMeta/covPlace/geogName[@type='country' and text()='United States']</nodePath>
 		</TestReplaceText>
+		<TestReplaceNodeName>
+			<run>Y</run>
+			<nodeName>corpName</nodeName>
+			<nodePath>/descMeta/agent[@type='provider']/persName</nodePath>
+		</TestReplaceNodeName>
 	</umdmTests>
 
 </sweep> </utilities> </fedora> </lims> </umd> </edu> </properties>
