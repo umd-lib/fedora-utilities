@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties> <edu> <umd> <lims> <fedora> <utilities> <sweep>
+	<action>
+		<printScan>Y</printScan>
+		<saveUMDM>N</saveUMDM>
+		<newUMDM>N</newUMDM>
+		<statusUMDM>Complete</statusUMDM>
+		<scanUMAMs>N</scanUMAMs>
+		<saveUMAM>N</saveUMAM>
+		<newUMAM>N</newUMAM>
+		<statusUMAM>Complete</statusUMAM>
+		<saveMETS>N</saveMETS>
+		<newMETS>N</newMETS>
+		<updateMETS>N</updateMETS>
+		<printPidList>Y</printPidList>
+	</action>
+	<umdmTests>
+	        <TestRootLanguage>N</TestRootLanguage>
+		<TestUMDMPid>N</TestUMDMPid>
+		<TestCovPlace>N</TestCovPlace>
+		<TestIdAlephsys>N</TestIdAlephsys>
+		<TestMediaType>N</TestMediaType>
+		<TestBrowse12>N</TestBrowse12>
+		<TestCollection>N</TestCollection>
+		<TestHandle>N</TestHandle>
+		<TestBrowse>N</TestBrowse>
+		<TestPhysDesc>N</TestPhysDesc>
+		<TestIDlocation>N</TestIDlocation>
+		<TestRights>N</TestRights>
+		<TestCitation>N</TestCitation>
+		<TestAddAttribute>
+		        <run>N</run>
+			<attributeName>xml:lang</attributeName>
+			<attributeValue>ja</attributeValue>
+			<nodePath>//price[@units='yen']</nodePath>
+		</TestAddAttribute>
+                <TestRemoveAttribute>
+                        <run>N</run> 
+                        <attributeName>type</attributeName>
+                        <nodePath>/descMeta/rights[@type='note']</nodePath>
+                </TestRemoveAttribute>
+		<TestReplaceText>
+		        <run>N</run>
+			<textValue>ja</textValue>
+			<nodePath>/descMeta/language[text()!='ja']</nodePath>
+		</TestReplaceText>
+		<TestReplaceNodeName>
+			<run>N</run>
+			<nodeName>corpName</nodeName>
+			<nodePath>/descMeta/agent[@type='provider']/persName</nodePath>
+		</TestReplaceNodeName>
+		<TestReplaceAttribute>
+		        <run>N</run>
+			<attributeName>units</attributeName>
+			<attributeValue>JPY</attributeValue>
+			<nodePath>//price[@units='yen']</nodePath>
+		</TestReplaceAttribute>
+		<TestReplaceAttributeName>
+		        <run>N</run>
+			<oldAttributeName>type</oldAttributeName>
+			<newAttributeName>label</newAttributeName>
+			<nodePath>/descMeta/covTime/date[@type='pcbccd']</nodePath>
+		</TestReplaceAttributeName>
+		<TestAddBrowse>
+			<run>Y</run>
+			<browseValue>University of Maryland</browseValue>
+			<nodePath>not(/descMeta/subject[@type='browse' and text()='University of Maryland'])</nodePath>
+		</TestAddBrowse>
+	</umdmTests>
+
+</sweep> </utilities> </fedora> </lims> </umd> </edu> </properties>
+
+
