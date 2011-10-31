@@ -1,4 +1,4 @@
-package src;
+package edu.umd.lib.fedora.util.foxml;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentFactory;
@@ -12,7 +12,8 @@ import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 import org.xml.sax.InputSource;
 
-import src.LIMSlookup;
+import edu.umd.lib.fedora.util.DO.DoUtils;
+import edu.umd.lib.fedora.util.DO.LIMSlookup;
 
 
 import java.io.BufferedReader;

@@ -1,4 +1,4 @@
-package src;
+package edu.umd.lib.fedora.util.foxml;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;

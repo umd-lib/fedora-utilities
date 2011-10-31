@@ -1,4 +1,4 @@
-package src;
+package edu.umd.lib.fedora.util.foxml;
 
 import java.util.HashMap;
 import java.util.List;

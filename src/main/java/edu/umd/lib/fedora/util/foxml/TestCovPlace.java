@@ -1,7 +1,9 @@
-package src;
+package edu.umd.lib.fedora.util.foxml;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentFactory;
+
+import edu.umd.lib.fedora.util.DO.DoUtils;
 
 import junit.framework.TestCase;
 

@@ -1,4 +1,4 @@
-package src;
+package edu.umd.lib.fedora.util.foxml;
 import java.io.FileInputStream;
 import java.util.List;
 import java.util.Properties;

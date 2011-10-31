@@ -1,4 +1,4 @@
-package src;
+package edu.umd.lib.fedora.loader;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -20,8 +20,18 @@ import org.dom4j.Element;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
 
-import src.LIMSlookup;
-import src.TabText;
+import edu.umd.lib.fedora.util.foxml.DCxml;
+import edu.umd.lib.fedora.util.foxml.DOxml;
+import edu.umd.lib.fedora.util.foxml.FedoraXML;
+import edu.umd.lib.fedora.util.foxml.LIMSimage;
+import edu.umd.lib.fedora.util.foxml.METSxml;
+import edu.umd.lib.fedora.util.foxml.UMAMxml;
+import edu.umd.lib.fedora.util.foxml.UMDMxml;
+import edu.umd.lib.fedora.util.foxml.UMfactory;
+import edu.umd.lib.fedora.util.foxml.ZOOMxml;
+
+import edu.umd.lib.fedora.util.DO.LIMSlookup;
+import edu.umd.lib.fedora.util.DO.TabText;
 
 
 public class LoadImages {

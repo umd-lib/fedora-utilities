@@ -1,4 +1,4 @@
-package src;
+package edu.umd.lib.fedora.util.foxml;
 
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
@@ -22,7 +22,7 @@ import org.dom4j.XPath;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
 
-import doUtils.ByNumeric;
+import edu.umd.lib.fedora.util.DO.ByNumeric;
 
 public class UMDMmets {
 

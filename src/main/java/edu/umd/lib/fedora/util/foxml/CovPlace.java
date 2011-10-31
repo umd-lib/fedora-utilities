@@ -1,4 +1,4 @@
-package src;
+package edu.umd.lib.fedora.util.foxml;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +7,7 @@ import java.util.List;
 import org.dom4j.DocumentFactory;
 import org.dom4j.Element;
 
-import doUtils.LIMSlookup;
+import edu.umd.lib.fedora.util.DO.LIMSlookup;
 
 public class CovPlace {
 

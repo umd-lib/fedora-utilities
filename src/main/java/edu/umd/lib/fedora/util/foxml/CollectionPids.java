@@ -1,8 +1,8 @@
-package src;
+package edu.umd.lib.fedora.util.foxml;
 
 import java.util.ArrayList;
 
-import doUtils.LIMSlookup;
+import edu.umd.lib.fedora.util.DO.LIMSlookup;
 
 public class CollectionPids {
 

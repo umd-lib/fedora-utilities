@@ -1,4 +1,4 @@
-package src;
+package edu.umd.lib.fedora.util.foxml;
 
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -10,7 +10,7 @@ import java.util.List;
 
 import javax.imageio.ImageIO;
 
-import src.LIMSlookup;
+import edu.umd.lib.fedora.util.DO.LIMSlookup;
 
 
 public class LIMSimage {
@@ -309,7 +309,7 @@ public class LIMSimage {
         // create and execute the zoomify command
         process = Runtime.getRuntime().exec( new String[] { "nice", 
             "python",
-            ( LIMSlookup.getZoomExecDir() + "/ZoomifyFileProcessor.py" ), 
+            ( edu.umd.lib.fedora.util.DO.LIMSlookup.getZoomExecDir() + "/ZoomifyFileProcessor.py" ), 
             (sZoomDir + "/" + strFileName) } );
         process.waitFor();
         process.destroy();

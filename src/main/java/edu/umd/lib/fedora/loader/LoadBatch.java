@@ -1,4 +1,4 @@
-package src;
+package edu.umd.lib.fedora.loader;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -19,6 +19,9 @@ import org.dom4j.DocumentFactory;
 import org.dom4j.Element;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
+
+import edu.umd.lib.fedora.util.DO.*;
+import edu.umd.lib.fedora.util.foxml.*;
 
 public class LoadBatch {
 

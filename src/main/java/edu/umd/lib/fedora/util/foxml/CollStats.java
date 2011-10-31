@@ -1,4 +1,4 @@
-package src;
+package edu.umd.lib.fedora.util.foxml;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -36,8 +36,6 @@ import fedora.client.FedoraClient;
 import fedora.client.Uploader;
 import fedora.server.access.FedoraAPIA;
 import fedora.server.management.FedoraAPIM;
-
-import src.Configurator;
 
 public class CollStats {
 

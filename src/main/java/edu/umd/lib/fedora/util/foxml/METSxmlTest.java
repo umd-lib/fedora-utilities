@@ -1,4 +1,4 @@
-package src;
+package edu.umd.lib.fedora.util.foxml;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,6 +16,8 @@ import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 import org.xml.sax.InputSource;
+
+import edu.umd.lib.fedora.util.DO.DoUtils;
 
 import junit.framework.TestCase;
 

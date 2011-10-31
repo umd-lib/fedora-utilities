@@ -1,4 +1,4 @@
-package src;
+package edu.umd.lib.fedora.util.DO;
 
 public class ByNumeric implements java.util.Comparator<String> {
 	public int compare(String nLeft, String nRight ) {

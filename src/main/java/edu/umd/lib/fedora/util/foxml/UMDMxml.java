@@ -1,4 +1,4 @@
-package src;
+package edu.umd.lib.fedora.util.foxml;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,6 +13,9 @@ import org.dom4j.Element;
 import org.dom4j.InvalidXPathException;
 import org.dom4j.Node;
 import org.dom4j.XPath;
+
+import edu.umd.lib.fedora.util.DO.DoUtils;
+import edu.umd.lib.fedora.util.DO.LIMSns;
 
 public class UMDMxml {
 
