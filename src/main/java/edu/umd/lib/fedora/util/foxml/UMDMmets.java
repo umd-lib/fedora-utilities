@@ -1,6 +1,5 @@
 package edu.umd.lib.fedora.util.foxml;
 
-import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,7 +16,6 @@ import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.InvalidXPathException;
 import org.dom4j.Namespace;
-import org.dom4j.Node;
 import org.dom4j.XPath;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
@@ -49,12 +47,6 @@ public class UMDMmets {
 	 */
 	
 	String memberType;
-	
-	private final int PID = 0;
-	private final int FILE_ID = 1;
-	private final int LABEL = 2;
-	private final int TYPE = 3;
-	private final int ORDER = 4;
 	
 	private static Logger log = Logger.getLogger(UMDMmets.class);
 	
@@ -243,8 +235,7 @@ public class UMDMmets {
 			
 			// Start building the document 
 			Namespace nsMets = Namespace.get("http://www.loc.gov/METS/");
-			Namespace nsXlink = Namespace.get("xlink", "http://www.w3.org/1999/xlink");
-			//Namespace nsNone = Namespace.get("");
+			Namespace.get("xlink", "http://www.w3.org/1999/xlink");
 			
 			Element root = thisMETS.addElement("mets")
 			.addAttribute("schemaLocation", 
@@ -356,7 +347,6 @@ public class UMDMmets {
 	private void setParts( Element partsSec ) {
 
 		Element part; // the div for the page or part
-		Element item; // the div for the derivative of the part
 		boolean bFinished = false;
 		int position = 1;
 		
@@ -487,7 +477,6 @@ public class UMDMmets {
 		Document thisMETS = hereTis.getXML();
 		
 		try {
-			OutputStreamWriter oBigOutWriter;
 			OutputFormat oBigFormat;
 			XMLWriter oBigWriter;
 			

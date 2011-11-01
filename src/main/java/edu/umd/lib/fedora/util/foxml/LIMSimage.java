@@ -6,24 +6,15 @@ import java.awt.Transparency;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
-
 import javax.imageio.ImageIO;
-
-import edu.umd.lib.fedora.util.DO.LIMSlookup;
 
 
 public class LIMSimage {
 
   private BufferedImage iPicture = null;
-  private int iFileCounter = 0;
-  private String strCollection = null;
-  private String strGroup = null;
-  private String strSupergroup = null;
   private String strFileName = null;
   private String strFileBase = null;
   private String strFileExt = null;
-  private String strSourcePath = null;
   private String strDestPath = null;
   private double fShortRatio = 0.0;
   private int iHeight;
@@ -35,7 +26,6 @@ public class LIMSimage {
 
   public LIMSimage( String sDestPath, String sFileName) {
 
-    String strFullPath = "";
     File fDestination;
 
     System.out.println("Entered LIMS Image.");

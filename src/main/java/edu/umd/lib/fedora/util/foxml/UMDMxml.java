@@ -121,9 +121,6 @@ public class UMDMxml {
 		List<String> values = new ArrayList<String>();
 
 		results = getXPath(strXpath).selectNodes(thisMetadata);
-		Element eResult;
-		Node nPart;
-		String sNodeType;
 		String sTemp;
 		String sPart;
 		Branch bElement;

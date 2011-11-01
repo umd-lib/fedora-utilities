@@ -3,7 +3,6 @@ package edu.umd.lib.fedora.util.foxml;
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
-import org.dom4j.Namespace;
 
 public class ZOOMxml {
 

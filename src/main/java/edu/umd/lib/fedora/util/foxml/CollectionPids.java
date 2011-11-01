@@ -6,12 +6,8 @@ import edu.umd.lib.fedora.util.DO.LIMSlookup;
 
 public class CollectionPids {
 
-  private int iPidCount = 0;
-  private String sPid = "";
-  private ArrayList<String> aPids;
-  
   public CollectionPids() {
-    aPids = new ArrayList<String>();
+    new ArrayList<String>();
   }
   
   public CollectionPids( String strPid ) {

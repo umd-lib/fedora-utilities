@@ -1,10 +1,8 @@
 package edu.umd.lib.fedora.util.DO;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +10,6 @@ import java.util.List;
 public class TabTextOut {
 
   private List<String> lKeys;
-  private HashMap<String, String> hLabels;
   private OutputStreamWriter oListWriter;
   
   public TabTextOut( String strFileName, List<String> lKeyList, List<String> lLabelList ) throws IOException {

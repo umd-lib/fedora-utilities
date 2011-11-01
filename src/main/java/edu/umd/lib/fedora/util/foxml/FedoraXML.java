@@ -1,36 +1,20 @@
 package edu.umd.lib.fedora.util.foxml;
 
 import org.dom4j.Document;
-import org.dom4j.DocumentFactory;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
-import org.dom4j.InvalidXPathException;
 import org.dom4j.Node;
-import org.dom4j.XPath;
-import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
-import org.dom4j.io.XMLWriter;
 import org.xml.sax.InputSource;
 
 import edu.umd.lib.fedora.util.DO.DoUtils;
 import edu.umd.lib.fedora.util.DO.LIMSlookup;
 
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.FileInputStream;
-import java.io.FileReader;
-import java.io.OutputStreamWriter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class FedoraXML {
 
@@ -41,8 +25,6 @@ public class FedoraXML {
 	private String label = " Object";
 	private String contentModel = "UMD_BOOK";
 	private String status = "Pending";
-	private String creationDate = null;
-	private String modificationDate = null;
 	private String strRefLoc;
 	private String strCollection  = "Misc";
 	private String strGroup = "999-999";
@@ -58,8 +40,6 @@ public class FedoraXML {
 	private DCxml thisDC = null;
 	private METSxml thisMETS = null;
 	private ZOOMxml thisZoom = null;
-	private VIDEOxml thisVideo = null;
-	
 	public FedoraXML( Document thisFoxml ) {
 	  parseFoxml( thisFoxml );
 	}
@@ -140,10 +120,8 @@ public class FedoraXML {
         contentModel = sThisValue;
       } else if( sThisName.matches(".*createdDate") ) {
         System.out.println("Created Date: " + sThisValue);
-        creationDate = sThisValue;
       } else if( sThisName.matches(".*lastModifiedDate") ) {
         System.out.println("Last Modified Date: " + sThisValue);
-        modificationDate = sThisValue;
       }
     }
 	  
@@ -571,11 +549,7 @@ public class FedoraXML {
 		
 		if (objectType.equals("UMAM")) {
 		  
-	    String controlGroup = "E";
-	    String baseURL = LIMSlookup.getWebBase(strCollection);
-	    String fileBase;
-	    String fileExtension;
-	    
+	    LIMSlookup.getWebBase(strCollection);
 	    strFileName = fileName;
 			
 	    if( strCollection.equalsIgnoreCase("prange")) {
@@ -660,8 +634,6 @@ public class FedoraXML {
 		String id = "image";
 		String strUrlExt = "";
 		String strFileExt = "";
-		String strPidNo = pid.split(":")[1];
-		
 		String[] aFileParts = strFileName.split("\\.");
 		String strFileBase = aFileParts[0];
 		String strFileExtension = aFileParts[1];

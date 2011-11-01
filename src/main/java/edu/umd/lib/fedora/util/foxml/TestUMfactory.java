@@ -1,9 +1,7 @@
 package edu.umd.lib.fedora.util.foxml;
 import java.io.FileInputStream;
-import java.util.List;
 import java.util.Properties;
 
-import org.dom4j.Element;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
 
@@ -45,7 +43,7 @@ public class TestUMfactory extends TestCase {
 				writer.write(thisUMDM.getXML());
 			}
 			
-			List<Element> lElements = thisUMDM.removeElements("/descMeta/subject");
+			thisUMDM.removeElements("/descMeta/subject");
 
 			System.out.println("--------------- After Removal!");
 			if (bPrintXML) {

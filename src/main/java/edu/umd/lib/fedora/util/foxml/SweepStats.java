@@ -6,7 +6,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -14,7 +13,6 @@ import java.util.Properties;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentFactory;
-import org.dom4j.Element;
 import org.dom4j.InvalidXPathException;
 import org.dom4j.Node;
 import org.dom4j.XPath;
@@ -39,15 +37,12 @@ public class SweepStats {
 	private final String XPATH_PREFIX = "/col:result/col:resultList/col:objectFields/col:";
 	private String thisPid;
 	private Document sweepStatsDoc;
-	private List<String> parts = new ArrayList<String>();
-	private List<String> collections = new ArrayList<String>();
 	private int hitCount = 0;
 	
 	public SweepStats(LIMSns names, Properties config, String strPid ) {
 		namespace = names;
 		thisPid = strPid;
 		configFile = config;
-		boolean bResult = false;
 		String strPidEsc = strPid.replaceFirst(":", "%5C:");
 		String strHost = config.getProperty("host");
 		String strURL = "http://" + strHost + "/search/?query=pid:" + strPidEsc;
@@ -164,8 +159,6 @@ public class SweepStats {
 		String strURL = "http://" + strHost + "/search/?query=pid:" + strPidEsc;
 		Document saveThis;
 		URL thisURL;
-		String doType;
-		
 		// First get the general specs
 		// Make sure that it is a dm type
 		// Get the doType
@@ -173,7 +166,7 @@ public class SweepStats {
 			
 			if( sweepStatsDoc != null ) {
 			
-				doType = getProp("doType");
+				getProp("doType");
 				
 				if( savePath != null && savePath.length() > 0 ) {
 					// save the UMDM

@@ -1,22 +1,11 @@
 package edu.umd.lib.fedora.util.foxml;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
 import java.util.List;
-import java.util.Properties;
-
 import org.dom4j.Document;
-import org.dom4j.DocumentException;
 import org.dom4j.io.OutputFormat;
-import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
-import org.xml.sax.InputSource;
-
 import edu.umd.lib.fedora.util.DO.DoUtils;
 
 import junit.framework.TestCase;

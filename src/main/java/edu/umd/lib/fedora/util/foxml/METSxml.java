@@ -1,31 +1,17 @@
 package edu.umd.lib.fedora.util.foxml;
 
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.Set;
-
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.dom4j.Document;
-import org.dom4j.DocumentException;
 import org.dom4j.DocumentFactory;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
-import org.dom4j.InvalidXPathException;
 import org.dom4j.Namespace;
-import org.dom4j.Node;
 import org.dom4j.QName;
-import org.dom4j.XPath;
 import org.dom4j.io.OutputFormat;
-import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
 import edu.umd.lib.fedora.util.DO.DoUtils;
@@ -199,7 +185,7 @@ public class METSxml {
 
 			// Start building the document
 			Namespace nsMets = Namespace.get("http://www.loc.gov/METS/");
-			Namespace nsXlink = Namespace.get("xlink",
+			Namespace.get("xlink",
 					"http://www.w3.org/1999/xlink");
 
 			QName thisQ = new QName("mets", nsMets );
@@ -832,7 +818,6 @@ public class METSxml {
 		Document thisMETS = hereTis.getXML();
 
 		try {
-			OutputStreamWriter oBigOutWriter;
 			OutputFormat oBigFormat;
 			XMLWriter oBigWriter;
 

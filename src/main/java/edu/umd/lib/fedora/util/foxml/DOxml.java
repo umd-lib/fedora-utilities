@@ -1,12 +1,8 @@
 package edu.umd.lib.fedora.util.foxml;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
-import org.dom4j.Namespace;
 import org.dom4j.Node;
 
 import edu.umd.lib.fedora.util.DO.DoUtils;

@@ -23,7 +23,6 @@ public class TabText
 	
 	private BufferedReader in;
 	
-	private int recordCounter = 0;
 	private int iFieldCounter = 0;
 	
 	public TabText(String fileName) {
@@ -60,8 +59,6 @@ public class TabText
 					
 				}
 			}
-			
-			recordCounter = 1;
 			
 		}	
 		catch( Exception e ) {
@@ -103,7 +100,6 @@ public class TabText
 						nextRecord.put(theseKeys.get(i), lineRecord.get(i));
 
 					}
-					recordCounter++;
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

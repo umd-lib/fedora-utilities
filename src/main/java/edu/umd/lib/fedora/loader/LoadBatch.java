@@ -1,25 +1,16 @@
 package edu.umd.lib.fedora.loader;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Properties;
 
-import org.dom4j.Document;
 import org.dom4j.DocumentFactory;
 import org.dom4j.Element;
-import org.dom4j.io.OutputFormat;
-import org.dom4j.io.XMLWriter;
-
 import edu.umd.lib.fedora.util.DO.*;
 import edu.umd.lib.fedora.util.foxml.*;
 
@@ -31,8 +22,6 @@ public class LoadBatch {
   private OutputStreamWriter oPidWriter;
   private OutputStreamWriter oUmdmWriter;
   private String strBaseDir;
-	
-	private String strPrintType = "File";
 	
 	public LoadBatch(String propFile ) {
 		try {
@@ -72,7 +61,6 @@ public class LoadBatch {
 		String strModel = "Book";
 		String strSWF = "";
 		String strZoomBase = "";
-		String strImageBase = "";
 		UMDMxml thisUMDM = null;
 		UMAMxml thisUMAM = null;
 		METSxml thisMETS = null;

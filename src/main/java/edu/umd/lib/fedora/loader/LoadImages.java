@@ -1,35 +1,18 @@
 package edu.umd.lib.fedora.loader;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Properties;
 
-import org.dom4j.Document;
 import org.dom4j.DocumentFactory;
-import org.dom4j.Element;
-import org.dom4j.io.OutputFormat;
-import org.dom4j.io.XMLWriter;
-
-import edu.umd.lib.fedora.util.foxml.DCxml;
-import edu.umd.lib.fedora.util.foxml.DOxml;
-import edu.umd.lib.fedora.util.foxml.FedoraXML;
 import edu.umd.lib.fedora.util.foxml.LIMSimage;
-import edu.umd.lib.fedora.util.foxml.METSxml;
-import edu.umd.lib.fedora.util.foxml.UMAMxml;
-import edu.umd.lib.fedora.util.foxml.UMDMxml;
 import edu.umd.lib.fedora.util.foxml.UMfactory;
-import edu.umd.lib.fedora.util.foxml.ZOOMxml;
-
 import edu.umd.lib.fedora.util.DO.LIMSlookup;
 import edu.umd.lib.fedora.util.DO.TabText;
 
@@ -37,12 +20,7 @@ import edu.umd.lib.fedora.util.DO.TabText;
 public class LoadImages {
 
   private Properties configFile = new Properties();
-  private UMfactory umf;
-  private DocumentFactory df;
-
   private OutputStreamWriter oFileStatWriter;
-
-  private String strPrintType = "File";
 
   private String strGroup = "416-001";
   private String strSuperGroup = "416";
@@ -52,8 +30,8 @@ public class LoadImages {
   public LoadImages(String propFile) {
     try {
       configFile.load(new FileInputStream(propFile));
-      umf = new UMfactory(configFile.getProperty("host"));
-      df = new DocumentFactory();
+      new UMfactory(configFile.getProperty("host"));
+      new DocumentFactory();
       
       // Setup the UMAM list output file
       oFileStatWriter = new OutputStreamWriter(new FileOutputStream(
@@ -73,32 +51,15 @@ public class LoadImages {
 
     boolean bSuccess = false;
     String strCollection = "Misc";
-    String strPid = "umd:0000";
     String strID = "999-998";
-    String strTitle = "Unknown";
     String strModel = "Book";
-    String strSWF = "";
-    String strZoomBase = "";
-    String strImageBase = "";
-    UMDMxml thisUMDM = null;
-    UMAMxml thisUMAM = null;
-    METSxml thisMETS = null;
-    FedoraXML dmFOXML = null;
-    FedoraXML amFOXML = null;
-    DOxml thisDO = null;
-    DCxml thisDC = null;
-    ZOOMxml thisZoom = null;
-    int iAmPos = 1;
-
     // Set up the TabText object from the properties File
     /*
      * batchFile is the file containing the records to be ingested. pids.txt
      * contains the list of available pids (assumed to be >= pids required
      */
     TabText oSourceFile = new TabText(configFile.getProperty("batchFile"));
-    TabText oPids = new TabText(configFile.getProperty("refLoc") + "pids.txt");
-    HashMap<String, String> hPids;
-
+    new TabText(configFile.getProperty("refLoc") + "pids.txt");
     // Iterate through the TabText File
     for (HashMap<String, String> hRecord : oSourceFile) {
 
@@ -149,14 +110,12 @@ public class LoadImages {
           strSuperGroup = aGroupParts[0];
         }
 
-        strTitle = "Unknown";
-
         if ((hRecord.get("title") != null)
             && (hRecord.get("title").length() > 0)) {
-          strTitle = hRecord.get("title");
+          hRecord.get("title");
         } else if ((hRecord.get("title-jp") != null)
             && (hRecord.get("title-jp").length() > 0)) {
-          strTitle = hRecord.get("title-jp");
+          hRecord.get("title-jp");
         }
 
         System.out.println("Processing: " + strID);
@@ -165,9 +124,6 @@ public class LoadImages {
         System.out.println("Content Model: " + strModel);
         System.out.println("Collection Pid: " + strCollectionPid);
         // If there is an existing UMDM object, close it out
-
-        // reset the UMAM position counter
-        iAmPos = 1;
 
         bSuccess = true;
 

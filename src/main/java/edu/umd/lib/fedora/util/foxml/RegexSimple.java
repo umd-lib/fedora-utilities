@@ -7,8 +7,6 @@ import java.util.regex.Pattern;
 
 public class RegexSimple {
 
-	private String CSV_PATTERN = "\\G(?:^|\t)(?:\"((?:[^\"]|\"\")*+)\"|([^\"\t]*))";
-	
 	public static List<String> getRegexSimple( String sSource, String sPattern ) {
 		
 		List<String> lResult = new ArrayList<String>();
