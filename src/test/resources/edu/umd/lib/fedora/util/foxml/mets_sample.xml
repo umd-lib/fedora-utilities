@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mets xmlns="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink" schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd">
+  <fileSec>
+    <fileGrp ID="fedora">
+      <file ID="2">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65299" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="3">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65429" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="4">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65430" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="5">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65431" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="6">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65432" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="7">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65434" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="8">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65436" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="9">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65439" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="10">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65440" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="11">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65441" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="12">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65442" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="13">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65443" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="14">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65444" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="15">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65445" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="16">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65446" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="17">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65453" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="18">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65454" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="19">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65455" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="20">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65456" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="21">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65458" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="22">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65461" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="23">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65462" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="24">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65463" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="26">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65466" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="25">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65467" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="27">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65468" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="28">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65469" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="29">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65470" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="30">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65588" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="31">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65590" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="32">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65591" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="33">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65593" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="34">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65594" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="35">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65595" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="36">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65599" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="37">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65601" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="38">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65603" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="39">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65604" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="40">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65702" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="41">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65703" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="42">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65704" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="43">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65705" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="44">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65706" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="45">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65707" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="46">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65708" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="47">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65709" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="48">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65710" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="49">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65711" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="50">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65712" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="51">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65717" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="52">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65718" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="53">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65719" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="54">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65721" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="55">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65725" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="56">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65765" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="57">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65766" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="58">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65767" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="59">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65768" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="60">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65769" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="61">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65770" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="62">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65771" xlink:type="simple"></FLocat>
+      </file> 
+     <file ID="63">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65772" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="64">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65773" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="65">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65774" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="66">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65775" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="67">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65776" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="68">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65777" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="69">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65778" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="70">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65779" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="72">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65781" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="73">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65782" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="74">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65783" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="75">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65784" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="76">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65785" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="77">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65786" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="78">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:65787" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="79">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:66940" xlink:type="simple"></FLocat>
+      </file>
+
+      <file ID="1">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:3392" xlink:type="simple"></FLocat>
+      </file>
+      <file ID="71">
+        <FLocat LOCTYPE="OTHER" OTHERLOCTYPE="PID" xlink:href="umd:66501" xlink:type="simple"></FLocat>
+      </file>
+    </fileGrp>
+  </fileSec>
+  <structMap TYPE="LOGICAL">
+
+    <div ID="rels">
+      <div ID="hasPart">
+        <fptr FILEID="2"></fptr>
+        <fptr FILEID="3"></fptr>
+        <fptr FILEID="4"></fptr>
+        <fptr FILEID="5"></fptr>
+        <fptr FILEID="6"></fptr>
+        <fptr FILEID="7"></fptr>
+        <fptr FILEID="8"></fptr>
+
+        <fptr FILEID="9"></fptr>
+        <fptr FILEID="10"></fptr>
+        <fptr FILEID="11"></fptr>
+        <fptr FILEID="12"></fptr>
+        <fptr FILEID="13"></fptr>
+        <fptr FILEID="14"></fptr>
+        <fptr FILEID="15"></fptr>
+        <fptr FILEID="16"></fptr>
+        <fptr FILEID="17"></fptr>
+
+        <fptr FILEID="18"></fptr>
+        <fptr FILEID="19"></fptr>
+        <fptr FILEID="20"></fptr>
+        <fptr FILEID="21"></fptr>
+        <fptr FILEID="22"></fptr>
+        <fptr FILEID="23"></fptr>
+        <fptr FILEID="24"></fptr>
+        <fptr FILEID="26"></fptr>
+        <fptr FILEID="25"></fptr>
+
+        <fptr FILEID="27"></fptr>
+        <fptr FILEID="28"></fptr>
+        <fptr FILEID="29"></fptr>
+        <fptr FILEID="30"></fptr>
+        <fptr FILEID="31"></fptr>
+        <fptr FILEID="32"></fptr>
+        <fptr FILEID="33"></fptr>
+        <fptr FILEID="34"></fptr>
+        <fptr FILEID="35"></fptr>
+
+        <fptr FILEID="36"></fptr>
+        <fptr FILEID="37"></fptr>
+        <fptr FILEID="38"></fptr>
+        <fptr FILEID="39"></fptr>
+        <fptr FILEID="40"></fptr>
+        <fptr FILEID="41"></fptr>
+        <fptr FILEID="42"></fptr>
+        <fptr FILEID="43"></fptr>
+        <fptr FILEID="44"></fptr>
+
+        <fptr FILEID="45"></fptr>
+        <fptr FILEID="46"></fptr>
+        <fptr FILEID="47"></fptr>
+        <fptr FILEID="48"></fptr>
+        <fptr FILEID="49"></fptr>
+        <fptr FILEID="50"></fptr>
+        <fptr FILEID="51"></fptr>
+        <fptr FILEID="52"></fptr>
+        <fptr FILEID="53"></fptr>
+
+        <fptr FILEID="54"></fptr>
+        <fptr FILEID="55"></fptr>
+        <fptr FILEID="56"></fptr>
+        <fptr FILEID="57"></fptr>
+        <fptr FILEID="58"></fptr>
+        <fptr FILEID="59"></fptr>
+        <fptr FILEID="60"></fptr>
+        <fptr FILEID="61"></fptr>
+        <fptr FILEID="62"></fptr>
+
+        <fptr FILEID="63"></fptr>
+        <fptr FILEID="64"></fptr>
+        <fptr FILEID="65"></fptr>
+        <fptr FILEID="66"></fptr>
+        <fptr FILEID="67"></fptr>
+        <fptr FILEID="68"></fptr>
+        <fptr FILEID="69"></fptr>
+        <fptr FILEID="70"></fptr>
+        <fptr FILEID="72"></fptr>
+
+        <fptr FILEID="73"></fptr>
+        <fptr FILEID="74"></fptr>
+        <fptr FILEID="75"></fptr>
+        <fptr FILEID="76"></fptr>
+        <fptr FILEID="77"></fptr>
+        <fptr FILEID="78"></fptr>
+        <fptr FILEID="79"></fptr>
+      </div>
+      <div ID="isMemberOfCollection">
+
+        <fptr FILEID="1"></fptr>
+        <fptr FILEID="71"></fptr>
+      </div>
+    </div>
+  </structMap>
+  <structMap TYPE="LOGICAL">
+    <div ID="images">
+      <div LABEL="1861-09-07p01" ORDER="1">
+        <div ID="DISPLAY">
+
+          <fptr FILEID="2"></fptr>
+        </div>
+      </div>
+      <div LABEL="1861-09-07p02" ORDER="2">
+        <div ID="DISPLAY">
+          <fptr FILEID="3"></fptr>
+        </div>
+      </div>
+      <div LABEL="1861-09-07p03" ORDER="3">
+
+        <div ID="DISPLAY">
+          <fptr FILEID="4"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-02-08p01" ORDER="4">
+        <div ID="DISPLAY">
+          <fptr FILEID="5"></fptr>
+        </div>
+      </div>
+
+      <div LABEL="1862-02-08p02" ORDER="5">
+        <div ID="DISPLAY">
+          <fptr FILEID="6"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-02-08p03" ORDER="6">
+        <div ID="DISPLAY">
+          <fptr FILEID="7"></fptr>
+        </div>
+
+      </div>
+      <div LABEL="1862-02-08p04" ORDER="7">
+        <div ID="DISPLAY">
+          <fptr FILEID="8"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-03-12p01" ORDER="8">
+        <div ID="DISPLAY">
+          <fptr FILEID="9"></fptr>
+
+        </div>
+      </div>
+      <div LABEL="1862-03-12p02" ORDER="9">
+        <div ID="DISPLAY">
+          <fptr FILEID="10"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-02-16p01" ORDER="10">
+        <div ID="DISPLAY">
+
+          <fptr FILEID="11"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-02-16p02" ORDER="11">
+        <div ID="DISPLAY">
+          <fptr FILEID="12"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-02-16p03" ORDER="12">
+
+        <div ID="DISPLAY">
+          <fptr FILEID="13"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-03-15p01" ORDER="13">
+        <div ID="DISPLAY">
+          <fptr FILEID="14"></fptr>
+        </div>
+      </div>
+
+      <div LABEL="1862-03-15p02" ORDER="14">
+        <div ID="DISPLAY">
+          <fptr FILEID="15"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-03-15p03" ORDER="15">
+        <div ID="DISPLAY">
+          <fptr FILEID="16"></fptr>
+        </div>
+
+      </div>
+      <div LABEL="1962-03-15p04" ORDER="16">
+        <div ID="DISPLAY">
+          <fptr FILEID="17"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-04-12p01" ORDER="17">
+        <div ID="DISPLAY">
+          <fptr FILEID="18"></fptr>
+
+        </div>
+      </div>
+      <div LABEL="1862-04-12p02" ORDER="18">
+        <div ID="DISPLAY">
+          <fptr FILEID="19"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-04-12p03" ORDER="19">
+        <div ID="DISPLAY">
+
+          <fptr FILEID="20"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-04-12p01" ORDER="20">
+        <div ID="DISPLAY">
+          <fptr FILEID="21"></fptr>
+        </div>
+      </div>
+      <div LABEL="undatedp01" ORDER="21">
+
+        <div ID="DISPLAY">
+          <fptr FILEID="22"></fptr>
+        </div>
+      </div>
+      <div LABEL="undatedp02" ORDER="22">
+        <div ID="DISPLAY">
+          <fptr FILEID="23"></fptr>
+        </div>
+      </div>
+
+      <div LABEL="1862-03-15p01" ORDER="23">
+        <div ID="DISPLAY">
+          <fptr FILEID="24"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-03-15p02" ORDER="24">
+        <div ID="DISPLAY">
+          <fptr FILEID="25"></fptr>
+        </div>
+
+      </div>
+      <div LABEL="1862-05-02p01" ORDER="25">
+        <div ID="DISPLAY">
+          <fptr FILEID="26"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-05-02p02" ORDER="26">
+        <div ID="DISPLAY">
+          <fptr FILEID="27"></fptr>
+
+        </div>
+      </div>
+      <div LABEL="1862-05-02p03" ORDER="27">
+        <div ID="DISPLAY">
+          <fptr FILEID="28"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-05-02p04" ORDER="28">
+      	<div ID="DISPLAY">
+        	<fptr FILEID="29"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-05-18p01" ORDER="29">
+        <div ID="DISPLAY">
+          <fptr FILEID="30"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-05-18p02" ORDER="30">
+
+        <div ID="DISPLAY">
+          <fptr FILEID="31"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-05-25p01" ORDER="31">
+        <div ID="DISPLAY">
+          <fptr FILEID="32"></fptr>
+        </div>
+      </div>
+
+      <div LABEL="1862-05-25p02" ORDER="32">
+        <div ID="DISPLAY">
+          <fptr FILEID="33"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-06-05p01" ORDER="33">
+        <div ID="DISPLAY">
+          <fptr FILEID="34"></fptr>
+        </div>
+
+      </div>
+      <div LABEL="1862-06-05p02" ORDER="34">
+        <div ID="DISPLAY">
+          <fptr FILEID="35"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-06-08p01" ORDER="35">
+        <div ID="DISPLAY">
+          <fptr FILEID="36"></fptr>
+
+        </div>
+      </div>
+      <div LABEL="1862-06-08p02" ORDER="36">
+        <div ID="DISPLAY">
+          <fptr FILEID="37"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-06-08p03" ORDER="37">
+        <div ID="DISPLAY">
+
+          <fptr FILEID="38"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-06-08p04" ORDER="38">
+        <div ID="DISPLAY">
+          <fptr FILEID="39"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-07-14p01" ORDER="39">
+
+        <div ID="DISPLAY">
+          <fptr FILEID="40"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-07-14p02" ORDER="40">
+        <div ID="DISPLAY">
+          <fptr FILEID="41"></fptr>
+        </div>
+      </div>
+
+      <div LABEL="1862-07-16p01" ORDER="41">
+        <div ID="DISPLAY">
+          <fptr FILEID="42"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-07-28p01" ORDER="42">
+        <div ID="DISPLAY">
+          <fptr FILEID="43"></fptr>
+        </div>
+
+      </div>
+      <div LABEL="1862-07-28p02" ORDER="43">
+        <div ID="DISPLAY">
+          <fptr FILEID="44"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-07-31p01" ORDER="44">
+        <div ID="DISPLAY">
+          <fptr FILEID="45"></fptr>
+
+        </div>
+      </div>
+      <div LABEL="1862-07-31p02" ORDER="45">
+        <div ID="DISPLAY">
+          <fptr FILEID="46"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-08-05p01" ORDER="46">
+        <div ID="DISPLAY">
+
+          <fptr FILEID="47"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-08-05p02" ORDER="47">
+        <div ID="DISPLAY">
+          <fptr FILEID="48"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-08-05p03" ORDER="48">
+
+        <div ID="DISPLAY">
+          <fptr FILEID="49"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-08-05p04" ORDER="49">
+        <div ID="DISPLAY">
+          <fptr FILEID="50"></fptr>
+        </div>
+      </div>
+
+      <div LABEL="1862-08-17p01" ORDER="50">
+        <div ID="DISPLAY">
+          <fptr FILEID="51"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-08-17p02" ORDER="51">
+        <div ID="DISPLAY">
+          <fptr FILEID="52"></fptr>
+        </div>
+
+      </div>
+      <div LABEL="1862-08-26p01" ORDER="52">
+        <div ID="DISPLAY">
+          <fptr FILEID="53"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-08-26p02" ORDER="53">
+        <div ID="DISPLAY">
+          <fptr FILEID="54"></fptr>
+
+        </div>
+      </div>
+      <div LABEL="1862-09-04p01" ORDER="54">
+        <div ID="DISPLAY">
+          <fptr FILEID="55"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-09-04p02" ORDER="55">
+        <div ID="DISPLAY">
+
+          <fptr FILEID="56"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-09-04p03" ORDER="56">
+        <div ID="DISPLAY">
+          <fptr FILEID="57"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-09-04p04" ORDER="57">
+
+        <div ID="DISPLAY">
+          <fptr FILEID="58"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-09-16p01" ORDER="58">
+        <div ID="DISPLAY">
+          <fptr FILEID="59"></fptr>
+        </div>
+      </div>
+
+      <div LABEL="1862-09-16p02" ORDER="59">
+        <div ID="DISPLAY">
+          <fptr FILEID="60"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-09-27p01" ORDER="60">
+        <div ID="DISPLAY">
+          <fptr FILEID="61"></fptr>
+        </div>
+
+      </div>
+      <div LABEL="1862-09-27p02" ORDER="61">
+        <div ID="DISPLAY">
+          <fptr FILEID="62"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-10-05p01" ORDER="62">
+        <div ID="DISPLAY">
+          <fptr FILEID="63"></fptr>
+
+        </div>
+      </div>
+      <div LABEL="1862-10-05p02" ORDER="63">
+        <div ID="DISPLAY">
+          <fptr FILEID="64"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-10-08p01" ORDER="64">
+        <div ID="DISPLAY">
+
+          <fptr FILEID="65"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-10-08p02" ORDER="65">
+        <div ID="DISPLAY">
+          <fptr FILEID="66"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-10-08p03" ORDER="66">
+
+        <div ID="DISPLAY">
+          <fptr FILEID="67"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-10-08p04" ORDER="67">
+        <div ID="DISPLAY">
+          <fptr FILEID="68"></fptr>
+        </div>
+      </div>
+
+      <div LABEL="1862-10-08p05" ORDER="68">
+        <div ID="DISPLAY">
+          <fptr FILEID="69"></fptr>
+        </div>
+      </div>
+      <div LABEL="no-datep01" ORDER="69">
+        <div ID="DISPLAY">
+          <fptr FILEID="70"></fptr>
+        </div>
+
+      </div>
+      <div LABEL="1862-10-21p01" ORDER="70">
+        <div ID="DISPLAY">
+          <fptr FILEID="79"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-10-21p02" ORDER="71">
+        <div ID="DISPLAY">
+          <fptr FILEID="72"></fptr>
+
+        </div>
+      </div>
+      <div LABEL="1862-10-28p01" ORDER="72">
+        <div ID="DISPLAY">
+          <fptr FILEID="73"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-10-28p02" ORDER="73">
+        <div ID="DISPLAY">
+
+          <fptr FILEID="74"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-10-30p01" ORDER="74">
+        <div ID="DISPLAY">
+          <fptr FILEID="75"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-11-02p01" ORDER="75">
+
+        <div ID="DISPLAY">
+          <fptr FILEID="76"></fptr>
+        </div>
+      </div>
+      <div LABEL="1862-12-07p01" ORDER="76">
+        <div ID="DISPLAY">
+          <fptr FILEID="77"></fptr>
+        </div>
+      </div>
+
+      <div LABEL="1862-12-07p02" ORDER="77">
+        <div ID="DISPLAY">
+          <fptr FILEID="78"></fptr>
+        </div>
+      </div>
+    </div>
+  </structMap>
+</mets>
+            

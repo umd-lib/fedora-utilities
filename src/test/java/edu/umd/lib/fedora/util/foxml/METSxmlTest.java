@@ -25,7 +25,7 @@ public class METSxmlTest extends TestCase {
 	  UMfactory uf = new UMfactory();
 		METSxml thisMETS;
 		
-		thisMETS = uf.getMETS("mets_sample.xml", "File");
+		thisMETS = uf.getMETS(System.getProperty("user.dir")+"src/test/resources/edu/umd/lib/fedora/util/foxml/"+"mets_sample.xml", "File");
         
     assertTrue(thisMETS != null);
 		
