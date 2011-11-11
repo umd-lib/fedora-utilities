@@ -127,6 +127,13 @@ public class METSxml {
 			String label) {
     
     boolean bIsStillGood = true;
+    ArrayList<HashMap<String, String>> hasParts = new ArrayList<HashMap<String, String>>();
+      
+    if( memberType.equals("videos") ) {
+      hasParts = hasVideos;
+    } else {
+      hasParts = hasImages;
+    }
 		
 	  //addMember("1", "umd:1234", "DISPLAY", "Page 1")
 
@@ -149,13 +156,13 @@ public class METSxml {
 	    HashMap<String, String> hThisOne;
 			
 			// Add the part, if necessary
-			iSize = hasImages.size();
+			iSize = hasParts.size();
 			if (memberPos < iSize) {
 				// Get the object from the existing parts
-			  hThisOne = hasImages.get((memberPos - 1));
+			  hThisOne = hasParts.get((memberPos - 1));
 			} else {
 			  hThisOne = new HashMap<String, String>();
-			  hasImages.add(hThisOne);
+			  hasParts.add(hThisOne);
 			}
 			
 			// These values will replace any existing values
