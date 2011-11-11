@@ -1,5 +1,6 @@
 package edu.umd.lib.fedora.util.foxml;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.util.List;
@@ -25,7 +26,11 @@ public class METSxmlTest extends TestCase {
 	  UMfactory uf = new UMfactory();
 		METSxml thisMETS;
 		
-		thisMETS = uf.getMETS(System.getProperty("user.dir")+"src/test/resources/edu/umd/lib/fedora/util/foxml/"+"mets_sample.xml", "File");
+		thisMETS = uf.getMETS(System.getProperty("user.dir")+File.separator+
+				"src"+File.separator+"test"+File.separator+"resources"+
+				File.separator+"edu"+File.separator+"umd"+File.separator+"lib"+
+				File.separator+"fedora"+File.separator+"util"+File.separator+"foxml"+
+				File.separator+"mets_sample.xml", "File");
         
     assertTrue(thisMETS != null);
 		
@@ -111,7 +116,11 @@ public class METSxmlTest extends TestCase {
     METSxml thisMETS;
     List<List<String>> lParts = null;
       
-    thisMETS = uf.getMETS("mets_bad_sample.xml", "File");
+    thisMETS = uf.getMETS(System.getProperty("user.dir")+File.separator+
+			"src"+File.separator+"test"+File.separator+"resources"+
+			File.separator+"edu"+File.separator+"umd"+File.separator+"lib"+
+			File.separator+"fedora"+File.separator+"util"+File.separator+"foxml"+
+			File.separator+"mets_bad_sample.xml", "File");
 				
 		assertTrue(thisMETS != null);
 				
