@@ -28,7 +28,7 @@ public class UMfactory {
 	DocumentFactory df = DocumentFactory.getInstance();
 	
 	public UMfactory() {
-	  sHost = "fedora.umd.edu";
+	  sHost = "fedora.lib.umd.edu";
 		namespace = new LIMSns().getNamespace();
 	}
   
