@@ -62,6 +62,7 @@ public class SweepReport {
   private int iFoundUMAM = 0;
   
   private String sFileName;
+  private String sBaseDir;
 
   private UMfactory umFactory;
 
@@ -76,16 +77,18 @@ public class SweepReport {
       configFile.load(in);
       in.close();
 
-      String strBaseDir = (String) configFile.get("baseDir");
+      
+      sBaseDir = System.getProperty("user.dir");
 
       umFactory = new UMfactory((String) configFile.get("host"));
       
-      sFileName = (String) configFile.get("baseDir") + "/" +
+      sFileName = sBaseDir + "/" +
         (String) configFile.get("refDir") +  "/" +
         (String) configFile.get("inPids");
 
-      oLogWriter = new OutputStreamWriter(new FileOutputStream(strBaseDir
-          +  "/" + (String) configFile.get("logFile")), "UTF-8");
+      oLogWriter = new OutputStreamWriter(new FileOutputStream(sBaseDir +
+          (String) configFile.get("refDir") +  "/" +
+          "/" + (String) configFile.get("logFile")), "UTF-8");
       
       //oListWriter = new OutputStreamWriter(new FileOutputStream(strBaseDir
       //    + (String) configFile.get("outFile")), "UTF-8");
@@ -94,15 +97,19 @@ public class SweepReport {
       //    + "Bibref Title\t" + "Box\t" + "Folder\t" + "Item\t" + "Count\t"
       //    + "UMAM\t" + "File Name" + "\n");
 
-      oPidWriter = new OutputStreamWriter(new FileOutputStream(strBaseDir
-          +  "/" + (String) configFile.get("pidFile")), "UTF-8");
+      oPidWriter = new OutputStreamWriter(new FileOutputStream(sBaseDir +
+          (String) configFile.get("refDir") +  "/" +
+          "/" + (String) configFile.get("pidFile")), "UTF-8");
 
-      oDelWriter = new OutputStreamWriter(new FileOutputStream(strBaseDir
-          +  "/" + (String) configFile.get("delFile")), "UTF-8");
-      oUmamWriter = new OutputStreamWriter(new FileOutputStream(strBaseDir
-          +  "/" + (String) configFile.get("umamFile")), "UTF-8");
-      oReindexWriter = new OutputStreamWriter(new FileOutputStream(strBaseDir
-          +  "/" + (String) configFile.get("reindexFile")), "UTF-8");
+      oDelWriter = new OutputStreamWriter(new FileOutputStream(sBaseDir +
+          (String) configFile.get("refDir") +  "/" +
+          "/" + (String) configFile.get("delFile")), "UTF-8");
+      oUmamWriter = new OutputStreamWriter(new FileOutputStream(sBaseDir +
+          (String) configFile.get("refDir") +  "/" +
+          "/" + (String) configFile.get("umamFile")), "UTF-8");
+      oReindexWriter = new OutputStreamWriter(new FileOutputStream(sBaseDir +
+          (String) configFile.get("refDir") +  "/" +
+          "/" + (String) configFile.get("reindexFile")), "UTF-8");
 
     } catch (IOException e) {
       // TODO Auto-generated catch block
