@@ -26,6 +26,7 @@ public class LoadImages {
   private String strSuperGroup = "416";
   private String strSourcePath = null;
   private String strDestPath = null;
+  private String strTitle = null;
 
   public LoadImages(String propFile) {
     try {
@@ -112,10 +113,10 @@ public class LoadImages {
 
         if ((hRecord.get("title") != null)
             && (hRecord.get("title").length() > 0)) {
-          hRecord.get("title");
+          strTitle = hRecord.get("title");
         } else if ((hRecord.get("title-jp") != null)
             && (hRecord.get("title-jp").length() > 0)) {
-          hRecord.get("title-jp");
+          strTitle = hRecord.get("title-jp");
         }
 
         System.out.println("Processing: " + strID);
