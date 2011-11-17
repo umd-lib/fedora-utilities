@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Properties;
 
 import org.dom4j.DocumentFactory;
+
 import edu.umd.lib.fedora.util.foxml.LIMSimage;
 import edu.umd.lib.fedora.util.foxml.UMfactory;
 import edu.umd.lib.fedora.util.DO.LIMSlookup;
@@ -21,7 +22,7 @@ public class LoadImages {
 
   private Properties configFile = new Properties();
   private OutputStreamWriter oFileStatWriter;
-
+  
   private String strGroup = "416-001";
   private String strSuperGroup = "416";
   private String strSourcePath = null;
@@ -124,8 +125,7 @@ public class LoadImages {
         String strCollectionPid = LIMSlookup.getCollectionPid(strCollection);
         System.out.println("Content Model: " + strModel);
         System.out.println("Collection Pid: " + strCollectionPid);
-        // If there is an existing UMDM object, close it out
-
+        
         bSuccess = true;
 
       } else {
