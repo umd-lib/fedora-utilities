@@ -14,7 +14,11 @@ public class TestFedoraXML extends TestCase {
     
     try {
       
-      File thisXml = new File("foxml-sample-umam.xml");
+      File thisXml = new File(System.getProperty("user.dir")+File.separator+
+    			"src"+File.separator+"test"+File.separator+"resources"+
+      			File.separator+"edu"+File.separator+"umd"+File.separator+"lib"+
+      			File.separator+"fedora"+File.separator+"util"+File.separator+"foxml"+
+      			File.separator+"foxml-sample-umam.xml");
       SAXReader reader = new SAXReader();
       Document thisDoc;
       thisDoc = reader.read(thisXml);

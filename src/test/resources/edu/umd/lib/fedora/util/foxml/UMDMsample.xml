@@ -1,0 +1,63 @@
+<descMeta>
+  <mediaType type="image">
+    <form type="analog">Photograph, artistic</form>
+  </mediaType>
+  <title type="main">"Old Abe," the live Wisconsin War Eagle</title>
+  <agent type="creator">
+    <corpName>Old Abe Museum of Ornithology</corpName>
+  </agent>
+  <agent type="creator">
+    <persName>Barrett, W.W.</persName>
+  </agent>
+  <covPlace>
+    <geogName type="continent">North America</geogName>
+    <geogName type="country">United States</geogName>
+    <geogName type="region">Pennsylvania</geogName>
+    <geogName type="settlement">Philadelphia</geogName>
+  </covPlace>
+  <covTime>
+    <century era="ad">1801-1900</century>
+    <date era="ad">1876</date>
+  </covTime>
+  <culture>North American</culture>
+  <culture>American</culture>
+  <language>eng</language>
+  <description>image of the eagle carried by the 8th Wisconsin Regiment in the Civil War, sold with the "History of 'Old Abe,' the live war eagle of the Eighth Regiment Wisconsin Voluteers" by Joseph O. Barret; signature of Harrison Ludington, Governor of Wisconsin, 1876</description>
+  <subject type="browse">War, Military</subject>
+  <subject type="browse1">Fine Arts</subject>
+  <subject type="browse2">Visual Arts</subject>
+  <subject scheme="TGM" type="topical">Old Abe (Eagle)</subject>
+  <subject scheme="TGM" type="topical">Exhibitors</subject>
+  <subject type="topical">
+    <other type="building">Agriculture Building.  Centennial Exhibition  (1876 :  Philadelphia, Pa.)</other>
+  </subject>
+  <subject type="topical">
+    <corpName>United States. Army. Wisconsin Infantry Regiment,  8th (1861-1865)</corpName>
+  </subject>
+  <subject type="genre">Art</subject>
+  <subject label="form" type="genre">Advertisements, Photographs</subject>
+  <subject type="genre">Ephemera</subject>
+  <identifier type="handle">hdl:1903.1/336</identifier>
+  <identifier type="location">Call Number: 1876-phi-08-0028</identifier>
+  <identifier>Box H</identifier>
+  <physDesc>
+    <color>black and white</color>
+    <size units="cm">6.3 x 10.2</size>
+  </physDesc>
+  <relationships>
+    <relation label="collection" type="isPartOf">Treasury of World's Fair Art &amp; Architecture</relation>
+    <relation label="fair" type="isPartOf">Centennial Exhibition (1876 : Philadelphia, Pa.)</relation>
+  </relationships>
+  <repository>
+    <corpName>Art &amp; Architecture Libraries</corpName>
+  </repository>
+  <rights>
+          The textual information and images contained in this website 
+          are provided for educational purposes only. Textual information 
+          and/or images may not be borrowed or reproduced beyond 
+          educational use without obtaining permission from the copyright 
+          holder. Reproduction in any form is subject to the copyright law 
+          of the United States. Please refer to sources on intellectual 
+          property, copyright, and fair use for further information.
+        </rights>
+</descMeta>

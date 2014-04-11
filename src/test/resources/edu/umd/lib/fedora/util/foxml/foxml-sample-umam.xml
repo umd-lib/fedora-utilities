@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<foxml:digitalObject PID="umd:52"
+  fedoraxsi:schemaLocation="info:fedora/fedora-system:def/foxml# http://www.fedora.info/definitions/1/0/foxml1-0.xsd"
+  xmlns:audit="info:fedora/fedora-system:def/audit#" xmlns:fedoraxsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:foxml="info:fedora/fedora-system:def/foxml#">
+  <foxml:objectProperties>
+    <foxml:property NAME="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" VALUE="FedoraObject"/>
+    <foxml:property NAME="info:fedora/fedora-system:def/model#state" VALUE="Active"/>
+    <foxml:property NAME="info:fedora/fedora-system:def/model#createdDate" VALUE="2006-07-13T16:25:47.707Z"/>
+    <foxml:property NAME="info:fedora/fedora-system:def/view#lastModifiedDate" VALUE="2007-04-06T19:14:57.648Z"/>
+  </foxml:objectProperties>
+  <foxml:datastream CONTROL_GROUP="X" ID="AUDIT" STATE="A" VERSIONABLE="false">
+    <foxml:datastreamVersion CREATED="2006-07-13T16:25:47.707Z"
+      FORMAT_URI="info:fedora/fedora-system:format/xml.fedora.audit" ID="AUDIT.0" LABEL="Fedora Object Audit Trail" MIMETYPE="text/xml">
+      <foxml:xmlContent>
+        <audit:auditTrail xmlns:audit="info:fedora/fedora-system:def/audit#">
+          <audit:record ID="AUDREC1">
+            <audit:process type="Fedora API-M"/>
+            <audit:action>addDisseminator</audit:action>
+            <audit:componentID>DISS1</audit:componentID>
+            <audit:responsibility>fedoraAdmin</audit:responsibility>
+            <audit:date>2006-11-07T18:34:48.134Z</audit:date>
+            <audit:justification>DisseminatorsPane generated this logMessage.</audit:justification>
+          </audit:record>
+          <audit:record ID="AUDREC2">
+            <audit:process type="Fedora API-M"/>
+            <audit:action>addDatastream</audit:action>
+            <audit:componentID>amInfo</audit:componentID>
+            <audit:responsibility>fedoraAdmin</audit:responsibility>
+            <audit:date>2007-04-06T19:14:57.181Z</audit:date>
+            <audit:justification/>
+          </audit:record>
+          <audit:record ID="AUDREC3">
+            <audit:process type="Fedora API-M"/>
+            <audit:action>addDisseminator</audit:action>
+            <audit:componentID>DISS2</audit:componentID>
+            <audit:responsibility>fedoraAdmin</audit:responsibility>
+            <audit:date>2007-04-06T19:14:57.648Z</audit:date>
+            <audit:justification/>
+          </audit:record>
+        </audit:auditTrail>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream CONTROL_GROUP="E" ID="thumbnail-250" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2006-07-13T16:25:47.707Z" ID="thumbnail-250.0" LABEL="Thumbnail 250x250"
+      MIMETYPE="image/jpeg" SIZE="0">
+      <foxml:contentDigest DIGEST="none" TYPE="DISABLED"/>
+      <foxml:contentLocation
+        REF="http://fedora.umd.edu/images/Worlds_Fairs/1876_Phi/X0250/wfc-1876-phi-08-0028-0001-X0250.jpg" TYPE="URL"/>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream CONTROL_GROUP="E" ID="thumbnail-110" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2006-07-13T16:25:47.707Z" ID="thumbnail-110.0" LABEL="Thumbnail 110x110"
+      MIMETYPE="image/jpeg" SIZE="0">
+      <foxml:contentDigest DIGEST="none" TYPE="DISABLED"/>
+      <foxml:contentLocation
+        REF="http://fedora.umd.edu/images/Worlds_Fairs/1876_Phi/X0110/wfc-1876-phi-08-0028-0001-X0110.jpg" TYPE="URL"/>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream CONTROL_GROUP="X" ID="DC" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2006-07-13T16:25:47.707Z" ID="DC.0" LABEL="" MIMETYPE="text/xml" SIZE="272">
+      <foxml:contentDigest DIGEST="none" TYPE="DISABLED"/>
+      <foxml:xmlContent>
+        <oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/">
+          <dc:title>wfc-1876-phi-08-0028-0001.jpg</dc:title>
+          <dc:identifier>umd:52</dc:identifier>
+        </oai_dc:dc>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream CONTROL_GROUP="E" ID="image" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2006-07-13T16:25:47.707Z" ID="image.0" LABEL="Image" MIMETYPE="image/jpeg" SIZE="0">
+      <foxml:contentDigest DIGEST="none" TYPE="DISABLED"/>
+      <foxml:contentLocation REF="http://fedora.umd.edu/images/Worlds_Fairs/1876_Phi/wfc-1876-phi-08-0028-0001.jpg" TYPE="URL"/>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream CONTROL_GROUP="X" ID="amInfo" STATE="A" VERSIONABLE="false">
+    <foxml:datastreamVersion CREATED="2007-04-06T19:14:57.181Z" ID="amInfo.0" LABEL="UMAM Object Information"
+      MIMETYPE="text/xml" SIZE="143">
+      <foxml:contentDigest DIGEST="none" TYPE="DISABLED"/>
+      <foxml:xmlContent>
+        <amInfo xmlns="http://www.itd.umd.edu/fedora/amInfo">
+          <type>UMD_IMAGE</type>
+          <status>Complete</status>
+        </amInfo>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:datastream CONTROL_GROUP="X" ID="umam" STATE="A" VERSIONABLE="true">
+    <foxml:datastreamVersion CREATED="2006-07-13T16:25:47.707Z" ID="umam.0"
+      LABEL="University of Maryland Administrative Metadata" MIMETYPE="text/xml" SIZE="1007">
+      <foxml:contentDigest DIGEST="none" TYPE="DISABLED"/>
+      <foxml:xmlContent>
+        <adminMeta>
+          <pid>umd:52</pid>
+          <identifier>wfc-1876-phi-08-0028-0001.jpg</identifier>
+          <digiProv>
+            <date>2006-05-17</date>
+            <agent type="creator">
+              <persName>Hammer, Paul</persName>
+            </agent>
+            <description>Created</description>
+          </digiProv>
+          <adminRights>
+            <access>Public</access>
+          </adminRights>
+          <technical>
+            <fileSize units="bytes">721396</fileSize>
+            <format>
+              <mimeType>jpeg</mimeType>
+              <compression>Lossy</compression>
+              <colorSpace>Color</colorSpace>
+            </format>
+            <image>
+              <spatialMetrics>
+                <imageWidth units="pixels">1275</imageWidth>
+                <imageLength units="pixels">2082</imageLength>
+                <imageResolution units="dpi">500</imageResolution>
+              </spatialMetrics>
+            </image>
+          </technical>
+        </adminMeta>
+      </foxml:xmlContent>
+    </foxml:datastreamVersion>
+  </foxml:datastream>
+  <foxml:disseminator BDEF_CONTRACT_PID="umd-bdef:rels" ID="diss-rels" STATE="A" VERSIONABLE="true">
+    <foxml:disseminatorVersion BMECH_SERVICE_PID="umd-bmech:rels" CREATED="2006-07-13T16:25:47.707Z" ID="diss-rels.0">
+      <foxml:serviceInputMap>
+        <foxml:datastreamBinding DATASTREAM_ID="DC" KEY="NULLBIND"/>
+      </foxml:serviceInputMap>
+    </foxml:disseminatorVersion>
+  </foxml:disseminator>
+  <foxml:disseminator BDEF_CONTRACT_PID="umd-bdef:amInfo" ID="DISS2" STATE="A" VERSIONABLE="true">
+    <foxml:disseminatorVersion BMECH_SERVICE_PID="umd-bmech:amInfo" CREATED="2007-04-06T19:14:57.648Z" ID="DISS2.0">
+      <foxml:serviceInputMap>
+        <foxml:datastreamBinding DATASTREAM_ID="amInfo" KEY="DATASTREAM"/>
+      </foxml:serviceInputMap>
+    </foxml:disseminatorVersion>
+  </foxml:disseminator>
+  <foxml:disseminator BDEF_CONTRACT_PID="umd-bdef:zoomify" ID="DISS1" STATE="A" VERSIONABLE="true">
+    <foxml:disseminatorVersion BMECH_SERVICE_PID="umd-bmech:zoomify" CREATED="2006-11-07T18:34:48.134Z" ID="DISS1.0" LABEL="zoomify">
+      <foxml:serviceInputMap>
+        <foxml:datastreamBinding DATASTREAM_ID="umam" KEY="umam"
+          LABEL="Binding to University of Maryland Administrative Metadata" ORDER="0"/>
+      </foxml:serviceInputMap>
+    </foxml:disseminatorVersion>
+  </foxml:disseminator>
+  <foxml:disseminator BDEF_CONTRACT_PID="umd-bdef:umam" ID="diss-umam" STATE="A" VERSIONABLE="true">
+    <foxml:disseminatorVersion BMECH_SERVICE_PID="umd-bmech:umam" CREATED="2006-07-13T16:25:47.707Z" ID="diss-umam.0">
+      <foxml:serviceInputMap>
+        <foxml:datastreamBinding DATASTREAM_ID="umam" KEY="DATASTREAM"/>
+      </foxml:serviceInputMap>
+    </foxml:disseminatorVersion>
+  </foxml:disseminator>
+  <foxml:disseminator BDEF_CONTRACT_PID="umd-bdef:image" ID="diss-image" STATE="A" VERSIONABLE="true">
+    <foxml:disseminatorVersion BMECH_SERVICE_PID="umd-bmech:image.jpeg.thumbnail" CREATED="2006-07-13T16:25:47.707Z" ID="diss-image.0">
+      <foxml:serviceInputMap>
+        <foxml:datastreamBinding DATASTREAM_ID="image" KEY="IMAGE"/>
+        <foxml:datastreamBinding DATASTREAM_ID="thumbnail-110" KEY="THUMBNAIL-110"/>
+        <foxml:datastreamBinding DATASTREAM_ID="thumbnail-250" KEY="THUMBNAIL-250"/>
+      </foxml:serviceInputMap>
+    </foxml:disseminatorVersion>
+  </foxml:disseminator>
+</foxml:digitalObject>

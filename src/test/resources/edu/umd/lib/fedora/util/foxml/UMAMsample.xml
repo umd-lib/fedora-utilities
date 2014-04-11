@@ -1,0 +1,28 @@
+<adminMeta>
+  <identifier>wfc-1876-phi-08-0028-0001.jpg</identifier>
+  <digiProv>
+    <date>2006-05-17</date>
+    <agent type="creator">
+      <persName>Hammer, Paul</persName>
+    </agent>
+    <description>Created</description>
+  </digiProv>
+  <adminRights>
+    <access>Public</access>
+  </adminRights>
+  <technical>
+    <fileSize units="bytes">721396</fileSize>
+    <format>
+      <mimeType>jpeg</mimeType>
+      <compression>Lossy</compression>
+      <colorSpace>Color</colorSpace>
+    </format>
+    <image>
+      <spatialMetrics>
+        <imageWidth units="pixels">1275</imageWidth>
+        <imageLength units="pixels">2082</imageLength>
+        <imageResolution units="dpi">500</imageResolution>
+      </spatialMetrics>
+    </image>
+  </technical>
+</adminMeta>

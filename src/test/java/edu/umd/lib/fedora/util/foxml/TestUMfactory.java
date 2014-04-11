@@ -1,4 +1,5 @@
 package edu.umd.lib.fedora.util.foxml;
+import java.io.File;
 import java.io.FileInputStream;
 import java.util.Properties;
 
@@ -13,11 +14,11 @@ public class TestUMfactory extends TestCase {
 
 	private Properties configFile = new Properties();
 	private boolean bOnLine = true;
-	private boolean bPrintXML = true;
+	private boolean bPrintXML = false;
 	
 	public void testUMDM() {
 		try {
-			configFile.load(new FileInputStream("Load.properties"));
+			//configFile.load(new FileInputStream("Load.properties"));
 			
 			UMfactory umf = new UMfactory();
 			
@@ -34,7 +35,11 @@ public class TestUMfactory extends TestCase {
 				writer.write(thisUMDM.getXML());
 			}
 			
-			thisUMDM = umf.getUMDM("UMDMsample.xml", "File" );
+			thisUMDM = umf.getUMDM(System.getProperty("user.dir")+File.separator+
+					"src"+File.separator+"test"+File.separator+"resources"+
+					File.separator+"edu"+File.separator+"umd"+File.separator+"lib"+
+					File.separator+"fedora"+File.separator+"util"+File.separator+"foxml"+
+					File.separator+"UMDMsample.xml", "File" );
 			
 			assertTrue(thisUMDM != null);
 			
@@ -62,7 +67,7 @@ public class TestUMfactory extends TestCase {
 
 		try {
 
-			configFile.load(new FileInputStream("Load.properties"));
+			//configFile.load(new FileInputStream("Load.properties"));
 
 			UMfactory umf = new UMfactory();
 
@@ -85,7 +90,7 @@ public class TestUMfactory extends TestCase {
 	
 	public void testUMAM() {
 		try {
-			configFile.load(new FileInputStream("Load.properties"));
+			//configFile.load(new FileInputStream("Load.properties"));
 			
 			UMfactory umf = new UMfactory();
 			
@@ -101,7 +106,11 @@ public class TestUMfactory extends TestCase {
 				writer = new XMLWriter( System.out, format );
 				writer.write(thisUMAM.getXML());
 			}
-			thisUMAM = umf.getUMAM("UMAMsample.xml", "File" );
+			thisUMAM = umf.getUMAM(System.getProperty("user.dir")+File.separator+
+					"src"+File.separator+"test"+File.separator+"resources"+
+					File.separator+"edu"+File.separator+"umd"+File.separator+"lib"+
+					File.separator+"fedora"+File.separator+"util"+File.separator+"foxml"+
+					File.separator+"UMAMsample.xml", "File" );
 			
 			assertTrue(thisUMAM != null);
 			
@@ -120,7 +129,7 @@ public class TestUMfactory extends TestCase {
 
 		try {
 
-			configFile.load(new FileInputStream("Load.properties"));
+			//configFile.load(new FileInputStream("Load.properties"));
 
 			UMfactory umf = new UMfactory();
 

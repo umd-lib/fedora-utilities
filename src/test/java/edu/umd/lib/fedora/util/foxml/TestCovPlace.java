@@ -32,9 +32,9 @@ public class TestCovPlace extends TestCase {
     DocumentFactory df = new DocumentFactory();
     Document dCovPlace = df.createDocument(oCV.getCovPlaceElement() );
     
-    DoUtils.saveDoc(dCovPlace, "/Temp/fCovPlace1" );
+    // DoUtils.saveDoc(dCovPlace, "/Temp/fCovPlace1" );
     
-    System.out.println( oCV.getString("All", ", ") );
+    //System.out.println( oCV.getString("All", ", ") );
     
   }
   
