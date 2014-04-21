@@ -4,6 +4,8 @@ import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 
+import edu.umd.lib.fedora.util.DO.DoUtils;
+
 public class ZOOMxml {
 
 	private String strTitle;
@@ -14,6 +16,15 @@ public class ZOOMxml {
 		strSWF = "Unknown";
 		strImagePath = "Unknown";
 	}
+  
+  public ZOOMxml( Element eZoom ) {
+    this();
+    if( eZoom != null ) {
+      strTitle = DoUtils.getXPath("/zoomify/title").selectSingleNode(eZoom).getText();
+      strSWF = DoUtils.getXPath("/zoomify/srcSWF").selectSingleNode(eZoom).getText();;
+      strImagePath = DoUtils.getXPath("/zoomify/imagePath").selectSingleNode(eZoom).getText();;
+    }
+  }
 	
 	public ZOOMxml( String newTitle, String newSWF, String newURL ) {
 		this();
