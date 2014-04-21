@@ -135,17 +135,23 @@ public class DOxml {
 	
 	private boolean parseDOxml(Document thisDOxml ) {
 	  boolean bResult = true;
-	  String sTempString = null;
+	  String sTempString;
+	  String sDoString = null;
 	  
 	  Element eRoot = thisDOxml.getRootElement();
 	  
-	  sTempString = eRoot.getName();
+	  sDoString = eRoot.getName();
 	  
-	  if( LIMSlookup.isDOtype(sTempString) ) {
+	  if( LIMSlookup.isDOtype(sDoString) ) {
 	    
-	    doType = sTempString;
+	    doType = sDoString;
 	    
-	    Node nTempNode = DoUtils.getXPath("/" + sTempString + "/contentmodel").selectSingleNode(thisDOxml);
+	    sTempString = "/" + sDoString + ":" + sDoString
+          + "/" + sDoString + ":" + "type";
+	    
+	    // System.out.println("ContentModel XPATH: " + sTempString);
+	    
+	    Node nTempNode = DoUtils.getXPath(sTempString).selectSingleNode(thisDOxml);
 	    
 	    doContModel = nTempNode.getText();
 	    
@@ -153,12 +159,17 @@ public class DOxml {
 	      doContModel = "UMD_IMAGE";
 	    }
       
-      nTempNode = DoUtils.getXPath("/" + sTempString + "/status").selectSingleNode(thisDOxml);
+      sTempString = "/" + sDoString + ":" + sDoString
+          + "/" + sDoString + ":" + "status";
+      
+      // System.out.println("Status XPATH: " + sTempString);
+      
+      nTempNode = DoUtils.getXPath(sTempString).selectSingleNode(thisDOxml);
       
       doStatus = nTempNode.getText();
 	    
       if( ! LIMSlookup.isStatus(doStatus) ) {
-        doStatus = "Candidate";
+        doStatus = "Pending";
       }
 	  }
 	  
