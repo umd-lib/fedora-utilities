@@ -103,7 +103,7 @@ public class UMDMxml {
 				  for (Iterator<Node> iPart = eResult.nodeIterator(); iPart.hasNext();) {
             nPart = iPart.next();
             sNodeType = nPart.getNodeTypeName();
-            System.out.println( sNodeType );
+            // System.out.println( sNodeType );
           }
 				  
 					result = nResult.getText();
@@ -126,8 +126,14 @@ public class UMDMxml {
 		Branch bElement;
 		List<Node> lNodes;
 		
+
+
+    // System.out.println("getProps-" + strXpath + "-" + results.size() );
+		
 		for (Node nNode : results) {
 
+		  // System.out.println("getProps-got one!");
+		  
 		  bElement = (Branch) nNode;
 	    
 	    lNodes = bElement.content();
@@ -135,15 +141,12 @@ public class UMDMxml {
 	    sTemp = "";
 		  
 		  for (Node nResult: lNodes) {
-
-        if( sTemp.length() > 0 ) {
-          sTemp += " ";
-        }
 		    
 		    sPart = "";
 		    
         if (nResult.getNodeTypeName().equalsIgnoreCase("Element")) {
           sTemp += DoUtils.elementString((Element) nResult);
+          // System.out.println("UMDMxml: ElementString: " + sTemp);
         } else {
           
           sPart += nResult.getText();
@@ -152,19 +155,29 @@ public class UMDMxml {
           sPart = sPart.replaceAll("\n", " ");
           sPart = sPart.replaceAll("\r", " ");
           
-          // Trim leading and trailing spaces
-          sPart = sPart.trim();
+          if( sPart.length() > 0 ) {
+            // Trim leading and trailing spaces
+            sPart = sPart.trim();
+            
+            // If trimming eliminates everything, make it a space
+            if( sPart.length() == 0 ) {
+              sPart = " ";
+            }
+          }
           
           sTemp += sPart;
+          
+          // System.out.println("UMDMxml: Property String: " + sTemp);
 
         }
 
       }
       if (sTemp.length() > 0) {
+        // System.out.println("UMDMxml: Added Property String: " + sTemp);
         values.add(sTemp);
       }
 		  
-      //System.out.println( nResult.getText() );
+      // System.out.println( "getProp-" + sTemp );
 		}
 		
 		return values;
@@ -174,6 +187,8 @@ public class UMDMxml {
 		
 		if( toBeAdded != null ) {
 			
+		  System.out.println( "Element to add: " + toBeAdded.getName() + "-" + toBeAdded.getText() );
+		  
 			root.add(toBeAdded);
 			
 //			List lContent = root.content();
