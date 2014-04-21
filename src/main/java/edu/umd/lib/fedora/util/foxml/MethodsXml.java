@@ -10,6 +10,7 @@ import org.dom4j.Element;
 import org.dom4j.InvalidXPathException;
 import org.dom4j.XPath;
 import edu.umd.lib.fedora.util.DO.LIMSns;
+import edu.umd.lib.fedora.util.DO.*;
 
 /**
  * Sweepstats accesses the shorthand report of the object
@@ -23,15 +24,25 @@ public class MethodsXml {
 	private Map<String, XPath> mXPath = new HashMap<String, XPath>();
 	private DocumentFactory df = DocumentFactory.getInstance();
 	private Document dMethods;
+	private String sDoType = "UMDM";
+	
 	public MethodsXml(Document theseMethods ) {
 		
 		Element root;
 		
-		root = theseMethods.getRootElement();
-		
-		root.detach();
-		
-		dMethods = df.createDocument(root);
+		if (theseMethods != null) {
+      root = theseMethods.getRootElement();
+      root.detach();
+      dMethods = df.createDocument(root);
+      
+      List<String> lBdefs = listBdefs();
+      
+      for( String sBdef : lBdefs ) {
+        if( sBdef.contains("umam")) {
+          sDoType = "UMAM";
+        }
+      }
+    }
 		
 	}
 	
@@ -53,7 +64,7 @@ public class MethodsXml {
 		
 		if (isOK()) {
 			lMethods = new ArrayList<String>();
-			returns = getXPath("/objectMethods/bDef").selectNodes(dMethods);
+			returns = DoUtils.getXPath("/objectMethods/bDef").selectNodes(dMethods);
 			for (Object thisNode : returns) {
 				
 				retNode = (Element) thisNode;
@@ -61,8 +72,9 @@ public class MethodsXml {
 				sBdef = retNode.attributeValue("pid");
 
 				if (sBdef != null) {
-
-					lMethods.add(sBdef);
+				  if( !lMethods.contains(sBdef)) {
+				    lMethods.add(sBdef);
+				  }
 				}
 
 			}
@@ -80,7 +92,7 @@ public class MethodsXml {
 		
 		if (isOK()) {
 			lMethods = new ArrayList<String>();
-			returns = getXPath("/objectMethods/bDef/method").selectNodes(dMethods);
+			returns = DoUtils.getXPath("/objectMethods/bDef/method").selectNodes(dMethods);
 			for (Object thisNode : returns) {
 				
 				retNode = (Element) thisNode;
@@ -95,27 +107,6 @@ public class MethodsXml {
 			}
 		}
 		return lMethods;
-	}
-	
-	/************************************************************* getXPath */
-	/**
-	 * Get a compiled XPath object for the expression.  Cache.
-	 */
-
-	private XPath getXPath(String strXPath) throws InvalidXPathException {
-
-		XPath xpath = null;
-
-		if (mXPath.containsKey(strXPath)) {
-			xpath = (XPath) mXPath.get(strXPath);
-
-		} else {
-			xpath = df.createXPath(strXPath);
-			xpath.setNamespaceURIs(namespace.getNamespace());
-			mXPath.put(strXPath, xpath);
-		}
-
-		return xpath;
 	}
 	
 	/**
