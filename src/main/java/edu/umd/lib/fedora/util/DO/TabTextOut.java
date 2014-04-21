@@ -51,14 +51,21 @@ public class TabTextOut {
   
   public void printRecord( HashMap<String, String> thisRecord ) throws IOException {
     
-    for (int i = 0; i < lKeys.size(); i++) {
-      if( i > 0 ) {
-        oListWriter.write("\t");
+    if (thisRecord != null) {
+      String sCurrentValue = null;
+      for (int i = 0; i < lKeys.size(); i++) {
+        if (i > 0) {
+          oListWriter.write("\t");
+        }
+        sCurrentValue = thisRecord.get(lKeys.get(i));
+        if (sCurrentValue != null) {
+          oListWriter.write(sCurrentValue);
+        } else {
+          oListWriter.write("");
+        }
       }
-      oListWriter.write(thisRecord.get(lKeys.get(i)));
+      oListWriter.write("\n");
     }
-    
-    oListWriter.write("\n");
   }
   
   public void closeWriter() throws IOException {
