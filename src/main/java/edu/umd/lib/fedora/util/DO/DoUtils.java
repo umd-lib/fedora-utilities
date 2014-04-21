@@ -24,6 +24,7 @@ public class DoUtils {
   private static Map namespace = new LIMSns().getNamespace();
 
   private static DocumentFactory df = DocumentFactory.getInstance();
+  private static OutputFormat format = OutputFormat.createPrettyPrint();
 
   public static boolean saveDoc(Document docThisDocument, String strFile) {
 
@@ -36,17 +37,16 @@ public class DoUtils {
       // Set up the interminable number of structures for printing this
       // puppy
       if( strFile.equalsIgnoreCase("Terminal") ) {
-        OutputFormat format = OutputFormat.createPrettyPrint();
         XMLWriter writer = new XMLWriter(System.out, format);
         writer.write(docThisDocument);
+        writer.flush();
       } else {
         OutputStreamWriter outWriter = new OutputStreamWriter(
             new FileOutputStream(strFile), "UTF-8");
       
-      
-        OutputFormat format = OutputFormat.createPrettyPrint();
         XMLWriter writer = new XMLWriter(outWriter, format);
         writer.write(docThisDocument);
+        writer.flush();
         writer.close();
       }
 
@@ -166,14 +166,8 @@ public class DoUtils {
 
     XPath xpath = null;
 
-    if (mXPath.containsKey(strXPath)) {
-      xpath = (XPath) mXPath.get(strXPath);
-
-    } else {
-      xpath = df.createXPath(strXPath);
-      xpath.setNamespaceURIs(namespace);
-      mXPath.put(strXPath, xpath);
-    }
+    xpath = df.createXPath(strXPath);
+    xpath.setNamespaceURIs(namespace);
 
     return xpath;
   }
