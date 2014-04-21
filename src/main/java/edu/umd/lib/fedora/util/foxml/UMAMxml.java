@@ -12,6 +12,7 @@ import org.dom4j.InvalidXPathException;
 import org.dom4j.Node;
 import org.dom4j.XPath;
 
+import edu.umd.lib.fedora.util.DO.DoUtils;
 import edu.umd.lib.fedora.util.DO.LIMSns;
 
 public class UMAMxml {
@@ -40,6 +41,13 @@ public class UMAMxml {
 		}
 	}
 	
+  public UMAMxml( Document dThisUMAM ) {
+    if( dThisUMAM != null ) {
+      thisMetadata = dThisUMAM.getRootElement();
+          root = thisMetadata;
+    }
+  }
+	
 	public boolean isOK() {
 		if( thisMetadata != null ) {
 			return true;
@@ -53,7 +61,7 @@ public class UMAMxml {
 		XPath xPath;
 		
 		if (thisMetadata != null) {
-			xPath = getXPath(strXpath);
+			xPath = DoUtils.getXPath(strXpath);
 			if( xPath != null ) {
 				Node nResult = xPath.selectSingleNode(thisMetadata);
 				if (nResult != null) {
@@ -69,7 +77,7 @@ public class UMAMxml {
 		List<Node> results;
 		List<String> values = new ArrayList<String>();
 		
-		results = getXPath(strXpath).selectNodes(thisMetadata);
+		results = DoUtils.getXPath(strXpath).selectNodes(thisMetadata);
 		
 		for (Node nResult : results) {
 			values.add(nResult.getText());
@@ -102,7 +110,7 @@ public class UMAMxml {
 		
 		if( strSearchPath != null && strSearchPath.length() > 0 ) {
 			
-			lElements = getXPath(strSearchPath).selectNodes(thisMetadata);
+			lElements = DoUtils.getXPath(strSearchPath).selectNodes(thisMetadata);
 			
 		}
 		
@@ -135,7 +143,7 @@ public class UMAMxml {
 		
 		if( strSearchPath != null && strSearchPath.length() > 0 ) {
 			
-			lElements = getXPath(strSearchPath).selectNodes(thisMetadata);
+			lElements = DoUtils.getXPath(strSearchPath).selectNodes(thisMetadata);
 			
 			for(Element eElement : lElements ) {
 				eElement.detach();
@@ -169,7 +177,7 @@ public class UMAMxml {
 		for (int i = 0; i < aLabels.length; i++) {
 			strXPath = "/adminMeta/" + aLabels[i];
 			
-			lElements = getXPath(strXPath).selectNodes(thisMetadata);
+			lElements = DoUtils.getXPath(strXPath).selectNodes(thisMetadata);
 			
 			for (Node nResult : lElements) {
 				eHolder = (Element) nResult;
@@ -178,33 +186,32 @@ public class UMAMxml {
 			}
 		}
 		
-		if( result == null ) {
-			return null;
-		} else {
-			return result;
-		}
+		return result;
 	}
-
-	/************************************************************* getXPath */
-	/**
-	 * Get a compiled XPath object for the expression.  Cache.
-	 */
-
-	private XPath getXPath(String strXPath) throws InvalidXPathException {
-
-		XPath xpath = null;
-
-		if (mXPath.containsKey(strXPath)) {
-			xpath = (XPath) mXPath.get(strXPath);
-
-		} else {
-			xpath = df.createXPath(strXPath);
-			xpath.setNamespaceURIs(namespace.getNamespace());
-			mXPath.put(strXPath, xpath);
-		}
-
-		return xpath;
-	}
+	
+	public String getIdentifier() {
+    return getProp("/adminMeta/identifier");
+  }
+  
+  public void setIdentifier(String sIdentifier ) {
+    Element eIdentifier;
+    
+    List<Element> lIdentifiers = getElements("/adminMeta/identifier");
+    
+    if( lIdentifiers.size() > 0 ) {
+      removeElements("/adminMeta/identifier");
+    
+      eIdentifier = lIdentifiers.get(0);
+      
+    } else {
+      eIdentifier = df.createElement("identifier");
+    }
+    
+    eIdentifier.setText(sIdentifier);
+    
+    addElement(eIdentifier);
+  }
+  
 	/**
 	 * @param args
 	 */
