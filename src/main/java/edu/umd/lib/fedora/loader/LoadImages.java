@@ -1,47 +1,82 @@
 package edu.umd.lib.fedora.loader;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.InputStream;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 
-import org.dom4j.DocumentFactory;
+import org.apache.log4j.Level;
+import org.apache.log4j.PropertyConfigurator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import edu.umd.lib.fedora.sweep.SubSheet;
 import edu.umd.lib.fedora.util.DO.LIMSlookup;
 import edu.umd.lib.fedora.util.foxml.LIMSimage;
-import edu.umd.lib.fedora.util.foxml.UMfactory;
 import edu.umd.lib.util.excelReader.ExcelReader;
 
 public class LoadImages {
+
+  private static final Logger log = LoggerFactory.getLogger(ValidateData.class);
+
+  private static boolean debug = false;
+  private static File log4jConfig;
 
   private final Properties configFile = new Properties();
   private OutputStreamWriter oFileStatWriter;
 
   private String strGroup = "416-001";
   private String strSuperGroup = "416";
-  private String strSourcePath = null;
-  private String strDestPath = null;
+  private String sourcePath = null;
+  private String destPath = null;
   private String strTitle = null;
 
-  private int iPidCount = 0;
-  private int iErrorCount = 0;
+  private int pidCount = 0;
+  private int umdmCount = 0;
+  private int umamCount = 0;
+
+  private int errorCount = 0;
+  private ArrayList<String> processingErrors;
 
   private boolean bWritePids = false;
 
   public LoadImages(String propFile, String fileName) {
     try {
       configFile.load(new FileInputStream(propFile));
-      new UMfactory(configFile.getProperty("host"));
-      new DocumentFactory();
+      // new UMfactory(configFile.getProperty("host"));
+      // new DocumentFactory();
+
+      // Initialize errors
+      processingErrors = new ArrayList<String>();
+
+      // Setup logging
+      if (log4jConfig != null) {
+        log.debug(log4jConfig.getAbsolutePath());
+        PropertyConfigurator.configure(log4jConfig.getAbsolutePath());
+      } else {
+        InputStream inputStream = Thread.currentThread()
+            .getContextClassLoader()
+            .getResourceAsStream("edu/umd/lib/fedora/loader/log4j.conf");
+
+        Properties pLog4j = new Properties();
+        pLog4j.load(inputStream);
+        PropertyConfigurator.configure(pLog4j);
+      }
+
+      if (debug) {
+        org.apache.log4j.Logger.getLogger(ValidateData.class).setLevel(
+            Level.DEBUG);
+      } else {
+        org.apache.log4j.Logger.getLogger(ValidateData.class).setLevel(
+            Level.INFO);
+      }
 
       // If a file name was passed in, make it the batch file
       if (fileName != null && fileName.length() > 0) {
@@ -51,11 +86,6 @@ public class LoadImages {
       if (configFile.getProperty("writePids").equalsIgnoreCase("Y")) {
         bWritePids = true;
       }
-
-      // Setup the UMAM list output file
-      oFileStatWriter = new OutputStreamWriter(new FileOutputStream(
-          "fileStats.txt"), "UTF-8");
-      oFileStatWriter.write("fileName\twidth\theight\tsize\n");
 
     } catch (FileNotFoundException e) {
       // TODO Auto-generated catch block
@@ -72,7 +102,7 @@ public class LoadImages {
     String strCollection = "Misc";
     String strID = "999-998";
     String strModel = "Book";
-    // Set up the TabText object from the properties File
+
     /*
      * batchFile is the file containing the records to be ingested.
      */
@@ -81,50 +111,43 @@ public class LoadImages {
     Iterator<HashMap<String, String>> iSourceFile;
     ExcelReader xSourceFile;
 
+    // Get and open the iterator in the Excel Spreadsheet
     try {
       xSourceFile = new ExcelReader(configFile.getProperty("baseLoc") + "/"
           + configFile.getProperty("dataLoc") + "/"
           + configFile.getProperty("batchFile"));
 
-      System.out.println(configFile.getProperty("baseLoc") + "/"
+      log.debug(configFile.getProperty("baseLoc") + "/"
           + configFile.getProperty("dataLoc") + "/"
           + configFile.getProperty("batchFile"));
 
       iSourceFile = xSourceFile.iterator();
 
     } catch (IOException e1) {
-      // TODO Auto-generated catch block
       e1.printStackTrace();
       iSourceFile = null;
     }
 
-    // Iterate through the TabText File
-    // for (HashMap<String, String> hRecord : iSourceFile) {
+    // Iterate through the File
     while (iSourceFile.hasNext()) {
       // System.out.println(it.next());
       hRecord = iSourceFile.next();
 
-      // The input batch file
-      // TabText oSourceFile = new
-      // TabText(configFile.getProperty("baseLoc") + "/" +
-      // configFile.getProperty("refLoc") + "/" +
-      // configFile.getProperty("batchFile"));
-
-      // Iterate through the TabText File
-      // for (HashMap<String, String> hRecord : oSourceFile) {
-
-      // System.out.println("---");
-      // System.out.println("id: " + hRecord.get("id"));
-      // System.out.println("pid: " + hRecord.get("pid"));
-      // System.out.println("type: " + hRecord.get("type"));
-      // System.out.println("title: " + hRecord.get("title-jp"));
-      // System.out.println("date: " + hRecord.get("date"));
-      // System.out.println("description: " + hRecord.get("description"));
-      // System.out.println("subjTopical: " + hRecord.get("subjTopical"));
-      // System.out.println("repository: " + hRecord.get("repository"));
-      // System.out.println("label: " + hRecord.get("label"));
-      // System.out.println("fileName: " + hRecord.get("fileName"));
-      // System.out.println("---");
+      if (debug) {
+        String debugMessage = "---\n";
+        debugMessage += "id: " + hRecord.get("id") + "\n";
+        debugMessage += "pid: " + hRecord.get("pid") + "\n";
+        debugMessage += "type: " + hRecord.get("type") + "\n";
+        debugMessage += "title: " + hRecord.get("title-jp") + "\n";
+        debugMessage += "date: " + hRecord.get("date") + "\n";
+        debugMessage += "description: " + hRecord.get("description") + "\n";
+        debugMessage += "subjTopical: " + hRecord.get("subjTopical") + "\n";
+        debugMessage += "repository: " + hRecord.get("repository") + "\n";
+        debugMessage += "label: " + hRecord.get("label") + "\n";
+        debugMessage += "fileName: " + hRecord.get("fileName") + "\n";
+        debugMessage += "---" + "\n";
+        log.debug(debugMessage);
+      }
 
       // We are starting a new object
 
@@ -134,15 +157,6 @@ public class LoadImages {
         strCollection = hRecord.get("collection");
       } else {
         hRecord.put("collection", strCollection);
-      }
-
-      // Set the Content Model which is under the type column in the
-      // spreadsheet
-      // This should not be null in any record
-      if ((hRecord.get("type") != null) && (hRecord.get("type").length() > 0)) {
-        strModel = LIMSlookup.getContentModel(hRecord.get("type"));
-      } else {
-        hRecord.put("type", strModel);
       }
 
       // The id column is supposed to be blank in all UMAM records
@@ -167,15 +181,16 @@ public class LoadImages {
           strTitle = hRecord.get("title-jp");
         }
 
-        System.out.println("Processing: " + strID);
+        log.info("Processing: " + strID);
 
         String strCollectionPid = LIMSlookup.getCollectionPid(strCollection);
-        System.out.println("Content Model: " + strModel);
-        System.out.println("Collection Pid: " + strCollectionPid);
+        log.debug("Content Model: " + strModel);
+        log.debug("Collection Pid: " + strCollectionPid);
 
         bSuccess = true;
 
-        iPidCount++;
+        pidCount++;
+        umdmCount++;
 
       } else if (hRecord.get("fileName") != null) {
 
@@ -185,17 +200,17 @@ public class LoadImages {
         hRecord.put("id", strID);
 
         // OK Now process the UMAM for each file name
-        String strFileName = hRecord.get("fileName");
+        String fileName = hRecord.get("fileName");
 
         // First lets find the file
 
         // Normalize the filename on jpg
-        if (strFileName.matches("\\.tif")) {
-          strFileName = strFileName.replace(".tif", ".jpg");
-        } else if (strFileName.matches("\\.jpeg")) {
-          strFileName = strFileName.replace(".jpeg", ".jpg");
-        } else if (!strFileName.matches("\\.jpg")) {
-          strFileName += ".jpg";
+        if (fileName.matches("\\.tif")) {
+          fileName = fileName.replace(".tif", ".jpg");
+        } else if (fileName.matches("\\.jpeg")) {
+          fileName = fileName.replace(".jpeg", ".jpg");
+        } else if (!fileName.matches("\\.jpg")) {
+          fileName += ".jpg";
         }
 
         if (strCollection.equalsIgnoreCase("Prange")) {
@@ -206,8 +221,8 @@ public class LoadImages {
           boolean bFound = false;
 
           // Has a path already been found?
-          if (strSourcePath != null && strSourcePath.length() > 0) {
-            strTempPath = strSourcePath + "/" + strFileName;
+          if (sourcePath != null && sourcePath.length() > 0) {
+            strTempPath = sourcePath + "/" + fileName;
 
             if (new File(strTempPath).exists()) {
               iFileCounter++;
@@ -219,33 +234,13 @@ public class LoadImages {
 
           if (!bFound) {
 
-            // List<String> lCollBases = LIMSlookup.getPrangeBases();
-            //
-            // for (String strBase : lCollBases) {
-            //
-            // strTempPath = strBase + "/" + strGroup + "/" + strFileName;
-            //
-            // System.out
-            // .println("Looking in " + strBase + " at " + strTempPath);
-            //
-            // if (new File(strTempPath).exists()) {
-            // iFileCounter++;
-            // strSourcePath = strBase;
-            // strFullPath = strTempPath;
-            // bFound = true;
-            // // This will set the path to the last one found
-            // // which is hopefully the only one found
-            // }
-            // }
-
             // Get the name of the directory listing
 
             String sDirlist = configFile.getProperty("baseLoc") + "/"
                 + configFile.getProperty("refLoc") + "/"
                 + configFile.getProperty("dirList");
 
-            SubSheet oSubSheet = new SubSheet(sDirlist, "File Name",
-                strFileName);
+            SubSheet oSubSheet = new SubSheet(sDirlist, "File Name", fileName);
 
             if (oSubSheet != null) {
 
@@ -267,10 +262,10 @@ public class LoadImages {
 
                 // Check to see if the file exists
 
-                if (new File(strTempPath + "/" + strFileName).exists()) {
+                if (new File(strTempPath + "/" + fileName).exists()) {
                   iFileCounter = lMatches.size();
-                  strSourcePath = strTempPath;
-                  strFullPath = strTempPath + "/" + strFileName;
+                  sourcePath = strTempPath;
+                  strFullPath = strTempPath + "/" + fileName;
                   bFound = true;
                   // This will set the path to the last one found
                   // which is hopefully the only one found
@@ -280,15 +275,16 @@ public class LoadImages {
           }
 
           if (bFound) {
-            System.out.println("Found " + strFileName + " at " + strSourcePath);
+            log.debug("Found " + fileName + " at " + sourcePath);
           } else {
-            System.out.println("Error: " + strFileName + " not Found!!!");
-            iErrorCount++;
+            log.error(fileName + " not Found!!!");
+            processingErrors.add(fileName + " not Found!!!");
+            errorCount++;
           }
 
           if (iFileCounter > 0) {
             if (iFileCounter > 1) {
-              System.out.println("Found more than one, boss.");
+              log.debug("Found more than one, boss.");
             }
 
             /*
@@ -298,19 +294,19 @@ public class LoadImages {
              */
             String strPathBase = LIMSlookup.getCollectionBase(strCollection);
             Process process;
-            strDestPath = strPathBase + "/" + strSuperGroup + "/" + strGroup;
+            destPath = strPathBase + "/" + strSuperGroup + "/" + strGroup;
             try {
-              if (!new File(strDestPath).exists()) {
-                System.out.println(strDestPath + " does not exist.");
-                new File(strDestPath).mkdirs();
+              if (!new File(destPath).exists()) {
+                log.debug(destPath + " does not exist.");
+                new File(destPath).mkdirs();
               } else {
-                System.out.println(strDestPath + " does exist!");
+                log.debug(destPath + " does exist!");
               }
 
-              if (!new File(strDestPath + "/" + strFileName).exists()) {
+              if (!new File(destPath + "/" + fileName).exists()) {
                 process = Runtime.getRuntime().exec(
                     new String[] { "ln", "-s", strFullPath,
-                        (strDestPath + "/" + strFileName) });
+                        (destPath + "/" + fileName) });
                 process.waitFor();
                 process.destroy();
               }
@@ -320,7 +316,7 @@ public class LoadImages {
               // we need to create and place the derivatives: 110,
               // 250, Zoom
 
-              LIMSimage thisImage = new LIMSimage(strDestPath, strFileName);
+              LIMSimage thisImage = new LIMSimage(destPath, fileName);
 
               if (thisImage != null) {
 
@@ -331,14 +327,10 @@ public class LoadImages {
                 String sZoomPath = LIMSlookup.getZoomFileBase(strCollection)
                     + "/" + strSuperGroup + "/" + strGroup;
 
-                if (!testZoom(sZoomPath, strFileName)) {
+                if (!testZoom(sZoomPath, fileName)) {
 
                   thisImage.makeZoom(sZoomPath);
                 }
-
-                oFileStatWriter.write(thisImage.getFileName() + "\t"
-                    + thisImage.getWidth() + "\t" + thisImage.getHeight()
-                    + "\t" + thisImage.getFileSize() + "\n");
 
               }
 
@@ -348,7 +340,8 @@ public class LoadImages {
               e.printStackTrace();
             }
 
-            iPidCount++;
+            pidCount++;
+            umamCount++;
 
           }
         } else {
@@ -361,52 +354,6 @@ public class LoadImages {
     } catch (IOException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
-    }
-
-    if (iErrorCount < 1 && bWritePids) {
-      // If nothing bad happened, then get the pids
-      String pidCmd = "/apps/fedora/bin/fedora-getpid -n umd -c " + iPidCount;
-
-      System.out.println("Pids to be Generated - " + pidCmd);
-
-      try {
-        Process p = Runtime.getRuntime().exec(pidCmd);
-        p.waitFor();
-
-        // Write out the list of pids
-        BufferedReader b = new BufferedReader(new InputStreamReader(
-            p.getInputStream()));
-        String line = "";
-
-        OutputStreamWriter oPidWriter = new OutputStreamWriter(
-            new FileOutputStream("newPids.txt"), "UTF-8");
-
-        if (oPidWriter != null) {
-
-          while ((line = b.readLine()) != null) {
-            oPidWriter.write(line + " \n");
-          }
-
-          oPidWriter.close();
-        }
-
-        b = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-        line = "";
-
-        while ((line = b.readLine()) != null) {
-          System.out.println("err: " + line);
-        }
-
-      } catch (IOException e) {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
-      } catch (InterruptedException e) {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
-      }
-
-    } else {
-      System.out.println("No Pids to be Generated - check the log.");
     }
 
     return bSuccess;
