@@ -63,6 +63,8 @@ public class ValidateData {
   private final int localPid = 0;
   private final String localPrefix = "local";
 
+  private String baseFileName = "default";
+
   private int errorCount = 0;
   private ArrayList<String> processingErrors;
 
@@ -103,20 +105,24 @@ public class ValidateData {
         // If a file name was passed in, make it the batch file
         if (fileName != null && fileName.length() > 0) {
           configFile.put("batchFile", fileName);
+          String[] fileparts = fileName.split("\\.(?=[^\\.]+$)");
+          baseFileName = fileparts[0];
         }
 
         if (configFile.getProperty("writePids").equalsIgnoreCase("Y")) {
           bWritePids = true;
         }
 
+        // Get the filename base so that we can use it for the output file
+        // prefix.
+
         // Setup the UMAM list output file
         oFileStatWriter = new OutputStreamWriter(new FileOutputStream(
-            "fileStats.txt"), "UTF-8");
+            baseFileName + "-fileStats.txt"), "UTF-8");
         oFileStatWriter.write("fileName\twidth\theight\tsize\n");
 
       } else {
-        log.error("Propfile: " + propFile + " does not exist.");
-        processingErrors.add("Propfile: " + propFile + " does not exist.");
+        log.error("Error: Propfile: " + propFile + " does not exist.");
         errorCount++;
       }
     } catch (FileNotFoundException e) {
@@ -385,8 +391,19 @@ public class ValidateData {
     if (errorCount < 1 && bWritePids) {
 
       // If nothing bad happened, then get the pids
-
+      FedoraAPIA APIA = null;
+      FedoraAPIM APIM = null;
       // Get the pids through the fedora API-M
+      try {
+        FedoraClient fc = new FedoraClient(configFile.getProperty("host"),
+            configFile.getProperty("user"), configFile.getProperty("pw"));
+        APIA = fc.getAPIA();
+        APIM = fc.getAPIM();
+      } catch (MalformedURLException e1) {
+        log.error("MAlformed URL on pid retrieval.", e1);
+      } catch (Exception e) {
+        log.error("APIA or APIM failed.", e);
+      }
 
       String pidCmd = "/apps/fedora/bin/fedora-getpid -n umd -c " + pidCount;
 
@@ -397,7 +414,7 @@ public class ValidateData {
         String[] aPids = getPids(pidCount);
 
         OutputStreamWriter oPidWriter = new OutputStreamWriter(
-            new FileOutputStream("newPids.txt"), "UTF-8");
+            new FileOutputStream(baseFileName + "-newPids.txt"), "UTF-8");
 
         if (oPidWriter != null && aPids != null && aPids.length == pidCount) {
 
@@ -512,11 +529,12 @@ public class ValidateData {
 
   }
 
-  private String[] getPids(int pidCount) throws Exception {
+  private String[] getPids(Integer pidCount) throws Exception {
     String[] pids;
 
     try {
-      pids = APIM.getNextPID(new NonNegativeInteger("1"), "umd");
+      String intVal = Integer.toString(pidCount);
+      pids = APIM.getNextPID(new NonNegativeInteger(intVal), "umd");
     } catch (Exception e) {
       throw new Exception("Unable to get new PID", e);
     }

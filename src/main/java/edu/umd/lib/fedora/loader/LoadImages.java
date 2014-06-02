@@ -5,8 +5,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStreamWriter;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -30,31 +28,17 @@ public class LoadImages {
   private static File log4jConfig;
 
   private final Properties configFile = new Properties();
-  private OutputStreamWriter oFileStatWriter;
 
   private String strGroup = "416-001";
   private String strSuperGroup = "416";
   private String sourcePath = null;
   private String destPath = null;
-  private String strTitle = null;
-
-  private int pidCount = 0;
-  private int umdmCount = 0;
-  private int umamCount = 0;
-
-  private int errorCount = 0;
-  private ArrayList<String> processingErrors;
-
-  private boolean bWritePids = false;
 
   public LoadImages(String propFile, String fileName) {
     try {
       configFile.load(new FileInputStream(propFile));
       // new UMfactory(configFile.getProperty("host"));
       // new DocumentFactory();
-
-      // Initialize errors
-      processingErrors = new ArrayList<String>();
 
       // Setup logging
       if (log4jConfig != null) {
@@ -83,16 +67,10 @@ public class LoadImages {
         configFile.put("batchFile", fileName);
       }
 
-      if (configFile.getProperty("writePids").equalsIgnoreCase("Y")) {
-        bWritePids = true;
-      }
-
     } catch (FileNotFoundException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
+      log.error("Error: File not found", e);
     } catch (IOException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
+      log.error("Error: IO Exception", e);
     }
   }
 
@@ -124,7 +102,7 @@ public class LoadImages {
       iSourceFile = xSourceFile.iterator();
 
     } catch (IOException e1) {
-      e1.printStackTrace();
+      log.error("Error; Bad things happenned with the Excel File", e1);
       iSourceFile = null;
     }
 
@@ -173,14 +151,6 @@ public class LoadImages {
           strSuperGroup = aGroupParts[0];
         }
 
-        if ((hRecord.get("title") != null)
-            && (hRecord.get("title").length() > 0)) {
-          strTitle = hRecord.get("title");
-        } else if ((hRecord.get("title-jp") != null)
-            && (hRecord.get("title-jp").length() > 0)) {
-          strTitle = hRecord.get("title-jp");
-        }
-
         log.info("Processing: " + strID);
 
         String strCollectionPid = LIMSlookup.getCollectionPid(strCollection);
@@ -188,9 +158,6 @@ public class LoadImages {
         log.debug("Collection Pid: " + strCollectionPid);
 
         bSuccess = true;
-
-        pidCount++;
-        umdmCount++;
 
       } else if (hRecord.get("fileName") != null) {
 
@@ -278,8 +245,6 @@ public class LoadImages {
             log.debug("Found " + fileName + " at " + sourcePath);
           } else {
             log.error(fileName + " not Found!!!");
-            processingErrors.add(fileName + " not Found!!!");
-            errorCount++;
           }
 
           if (iFileCounter > 0) {
@@ -328,8 +293,11 @@ public class LoadImages {
                     + "/" + strSuperGroup + "/" + strGroup;
 
                 if (!testZoom(sZoomPath, fileName)) {
-
                   thisImage.makeZoom(sZoomPath);
+                }
+
+                if (!testZoom(sZoomPath, fileName)) {
+                  log.error("Error: Zoomify failed for " + fileName);
                 }
 
               }
@@ -340,20 +308,11 @@ public class LoadImages {
               e.printStackTrace();
             }
 
-            pidCount++;
-            umamCount++;
-
           }
         } else {
           // This is where the code for non-Prange images goes
         }
       }
-    }
-    try {
-      oFileStatWriter.close();
-    } catch (IOException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
     }
 
     return bSuccess;
@@ -388,7 +347,6 @@ public class LoadImages {
    * @param args
    */
   public static void main(String[] args) {
-    // TODO Auto-generated method stub
     if (args.length == 2) {
       LoadImages thisBatch = new LoadImages(args[0], args[1]);
       if (thisBatch.process()) {
