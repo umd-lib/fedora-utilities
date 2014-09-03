@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.dom4j.Attribute;
 import org.dom4j.Branch;
 import org.dom4j.Document;
 import org.dom4j.DocumentFactory;
@@ -292,7 +293,14 @@ List<Element> lElements = null;
 		List<Node> lElements;
 		Element eHolder;
 		Element localRoot = df.createElement("descMeta");
-		localRoot.addAttribute("xml:lang", "en");
+		List<Attribute> lAttr = localRoot.attributes();
+		
+		// Copy all of the attributes from the original descmeta
+		// so that they will all be in the new <descMeta>.
+		for (Attribute attribute : lAttr) {
+			localRoot.add(attribute);
+		}
+		
 		result.add(localRoot);
 		result.setRootElement(localRoot);
 		
