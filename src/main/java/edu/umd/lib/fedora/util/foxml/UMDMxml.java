@@ -292,6 +292,7 @@ List<Element> lElements = null;
 		List<Node> lElements;
 		Element eHolder;
 		Element localRoot = df.createElement("descMeta");
+		localRoot.addAttribute("xml:lang", "en");
 		result.add(localRoot);
 		result.setRootElement(localRoot);
 		
